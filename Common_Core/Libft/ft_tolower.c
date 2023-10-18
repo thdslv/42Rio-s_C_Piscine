@@ -6,13 +6,13 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:20:11 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/16 19:24:39 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:19:48 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(char c)
+char	ft_tolower(unsigned char c)
 {
 	if (c >= 65 && c <= 90)
 		return (c + 32);
-	return (0);
+	return (c);
 }
