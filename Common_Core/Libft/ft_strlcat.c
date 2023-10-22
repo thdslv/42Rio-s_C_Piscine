@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:45:35 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/20 20:16:25 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/22 19:24:29 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,41 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
+	size_t	r;
 
-	i = ft_strlen(dst);
+	i = 0;
 	j = 0;
-	while (src[j])
+	r = ft_strlen(src) + ft_strlen(dst);
+	while (dst[j])
+		j++;
+	while (src[i] && (j < (size - 1)))
 	{
-		dst[i++] = src[j++];
+		dst[j] = src[i];
+		j++;
+		i++;
 	}
-	dst[i] = '\0';
-	return (size + j);
+	dst[j] = '\0';
+	return (r);
 }
 
 /*#include <stdio.h>
 #include <bsd/string.h>
 
-int	main()
+int	main(void)
 {
-	char	s[] = "da Silva";
-	char	d[] = "Thalles ";
+	size_t n = 0;
 
-	printf("%zu\n", strlcat(d, s , 8));
-	printf("%zu\n", ft_strlcat(d, s , 8));
-	printf("%s\n", d);
+	char dest1[10] = "Tes";
+	char src1[] = "te";
+
+	printf("Meu retorno: %zu\n", ft_strlcat(dest1, src1, strlen(dest1) + 1 + n));
+	printf("Minha dest: %s\n\n", dest1);
+
+	char dest2[10] = "Tes";
+	char src2[] = "te";
+
+	printf("Retorno original: %zu\n", strlcat(dest2, src2, strlen(dest2) + 1 + n));
+	printf("Dest original: %s\n\n", dest2);
+
 	return (0);
 }*/

@@ -3,43 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+        */
+/*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 15:32:07 by marcosv2          #+#    #+#             */
-/*   Updated: 2023/09/03 20:57:21 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/09/03 15:32:07 by thda-sil          #+#    #+#             */
+/*   Updated: 2023/10/22 19:04:57 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+#include <stdlib.h>
+#include <bsd/string.h>
+
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
+	size_t	r;
 
 	i = 0;
 	j = 0;
-	while (dest[j] != '\0')
-	{
+	r = strlen(src) + strlen(dest);
+	while (dest[j])
 		j++;
-	}
-	while (src[i] != '\0')
+	while (src[i] != '\0' && (j < (size - 1)))
 	{
-		if (j < size - 1)
-		{
-			dest[j] = src[i];
-		}
+		dest[j] = src[i];
 		j++;
 		i++;
 	}
-	dest[j - 1] = '\0';
-	return (j);
+	dest[j] = '\0';
+	return (r);
 }
 
 #include <stdio.h>
 
 int	main(void)
 {
-	char destino[101] = "Tes";
+	size_t	n = 0;
 
-	printf("- %d\n", ft_strlcat(destino, "te", 5));
-	printf("- %s", destino);
+	char dest1[10] = "Tes";
+	char src1[] = "te";
+
+	printf("Meu retorno: %zu\n", ft_strlcat(dest1, src1, strlen(dest1) + 1 + n));
+	printf("Minha dest: %s\n\n", dest1);
+	
+	char dest2[10] = "Tes";
+	char src2[] = "te";
+
+	printf("Retorno original: %zu\n", strlcat(dest2, src2, strlen(dest2) + 1 + n));
+	printf("Dest original: %s\n\n", dest2);
+
+	return (0);
 }
