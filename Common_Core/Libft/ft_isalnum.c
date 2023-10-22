@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 19:20:11 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/18 16:19:48 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/10/16 19:03:40 by thda-sil          #+#    #+#             */
+/*   Updated: 2023/10/18 17:29:07 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(unsigned char c)
+#include "libft.h"
+
+int	ft_alnum(char c)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
 }

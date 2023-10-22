@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 07:38:15 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/17 07:38:18 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:55:30 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	return (ft_strlen(src));
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main()
 {
@@ -36,4 +36,4 @@ int	main()
 	ft_strlcpy(d, s, 5);
 	printf("%s", d);
 	return (0);
-}
+}*/

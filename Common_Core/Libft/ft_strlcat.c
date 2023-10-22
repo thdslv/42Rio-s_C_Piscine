@@ -1,50 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 20:31:18 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/19 03:34:00 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/10/20 15:45:35 by thda-sil          #+#    #+#             */
+/*   Updated: 2023/10/20 20:16:25 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	char	*str;
+	size_t	j;
 
-	str = (char *)s;
-	if (ft_strlen(str) < n)
-		return (0);
-	i = 0;
-	while (i < n)
+	i = ft_strlen(dst);
+	j = 0;
+	while (src[j])
 	{
-		str[i] = c;
-		i++;
+		dst[i++] = src[j++];
 	}
-	return (s);
+	dst[i] = '\0';
+	return (size + j);
 }
 
 /*#include <stdio.h>
+#include <bsd/string.h>
 
 int	main()
 {
-	char 	str[] = "Thalles da Silva";
-	int	a;
+	char	s[] = "da Silva";
+	char	d[] = "Thalles ";
 
-	a = 65;
-	printf("%s\t%p\n", str, str);
-
-	ft_memset(str, a, 7);
-
-	printf("%s\t%p\n", str, str);
-
-	ft_memset(&a, a, 3);
-
-	printf("%d\t%p\n", a, &a);
+	printf("%zu\n", strlcat(d, s , 8));
+	printf("%zu\n", ft_strlcat(d, s , 8));
+	printf("%s\n", d);
 	return (0);
 }*/

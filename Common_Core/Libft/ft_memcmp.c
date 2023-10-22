@@ -1,50 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 20:31:18 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/19 03:34:00 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/10/20 20:45:15 by thda-sil          #+#    #+#             */
+/*   Updated: 2023/10/20 21:02:35 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
-	char	*str;
+	char	*str1;
+	char	*str2;
 
-	str = (char *)s;
-	if (ft_strlen(str) < n)
-		return (0);
+	str1 = (char *)s1;
+	str2 = (char *)s2;
 	i = 0;
 	while (i < n)
 	{
-		str[i] = c;
+		if ((str1[i] > str2[i]) || (str1[i] < str2[i]))
+			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (s);
+	return (0);
 }
 
 /*#include <stdio.h>
 
 int	main()
 {
-	char 	str[] = "Thalles da Silva";
-	int	a;
-
-	a = 65;
-	printf("%s\t%p\n", str, str);
-
-	ft_memset(str, a, 7);
-
-	printf("%s\t%p\n", str, str);
-
-	ft_memset(&a, a, 3);
-
-	printf("%d\t%p\n", a, &a);
+	printf("%i\n", ft_memcmp("Hello", "Hdllo", 5));//pos
+	printf("%i\n", ft_memcmp("Hdllo", "Hello", 5));//neg
+	printf("%i\n", ft_memcmp("Hello", "Hello", 5));//0
 	return (0);
 }*/
