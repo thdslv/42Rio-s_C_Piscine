@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:43:05 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/22 19:44:06 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:04:33 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ int	ft_atoi(const char *nptr)
 
 	i = 0;
 	res = 0;
-	sign = 0;
-	while (nptr[i] == '-' || nptr[i] == '+' || (nptr[i] >= 0 && nptr[i] <= 32))
+	sign = 1;
+	while (nptr[i] >= 0 && nptr[i] <= 32)
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (nptr[i] == '-' )
-			sign++;
+		if (nptr[i] == '-')
+			sign = -sign;
 		i++;
 	}
 	while (nptr[i] >= 48 && nptr[i] <= 57)
@@ -30,9 +32,7 @@ int	ft_atoi(const char *nptr)
 		res = res * 10 + (nptr[i] - 48);
 		i++;
 	}
-	if (sign % 2 != 0)
-		res = -res;
-	return (res);
+	return (res * sign);
 }
 
 /*#include <stdio.h>
@@ -40,9 +40,9 @@ int	ft_atoi(const char *nptr)
 
 int	main(void)
 {
-	printf("%i\n", ft_atoi("  \n ---123a1"));
+	printf("%i\n", ft_atoi("  \n -123a1"));
 	printf("%i\n", atoi("  \n -123a1"));
-	printf("%i\n", ft_atoi("\t \n \t ---123a1"));
-	printf("%i\n", atoi("\t \n \t -123a1"));
+	printf("%i\n", ft_atoi("\t \n \t +-123a1"));
+	printf("%i\n", atoi("\t \n \t +-123a1"));
 	return (0);
 }*/
