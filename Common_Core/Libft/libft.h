@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:44:57 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/18 18:03:38 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:31:19 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int	ft_isalpha(char c);
 int	ft_isdigit(char c);
-int	ft_alnum(char c);
+int	ft_isalnum(char c);
 int	ft_isascii(unsigned char c);
 int	ft_isprint(char c);
 size_t	ft_strlen(const char *str);
@@ -34,5 +34,7 @@ char	ft_tolower(unsigned char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+
+void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:31:18 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/19 03:34:00 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:19:20 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memset(void *s, int c, size_t n)
 	char	*str;
 
 	str = (char *)s;
-	if (ft_strlen(str) < n)
-		return (0);
 	i = 0;
 	while (i < n)
 	{

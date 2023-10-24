@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 02:34:06 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/23 18:21:30 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/23 21:37:27 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,43 +16,45 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*d;
 	char	*s;
-	size_t	i;
 
 	d = (char *)dest;
 	s = (char *)src;
 	if (!dest && !src)
 		return (0);
-	i = 0;
-	if (src < dest)
+	if (src > dest)
 	{
-		while (n >= 0)
-		{
-			d[n] = s[n];
-			n--;
-		}
+		ft_memcpy(dest, src, n);
 	}
 	else
 	{
-		ft_memcpy(d, s, n);
+		while (n)
+		{
+			d[n - 1] = s[n - 1];
+			n--;
+		}
 	}
 	return (dest);
 }
 
-/*#include <stdio.h>
-#include <string.h>
+/*#include <string.h>
+#include <stdio.h>
 
 int	main()
 {
-	char    destiny[10] = "Thalles";
-        char    source[] = "da Silva";
-        char    destiny2[10] = "Thalles";
+	char    string[] = "lorem ipsum dolor sit amet";
+      	char    dest[55];
+	char	dest2[55];
+	char	string2[] = "lorem ipsum dolor sit amet";
 
-        printf("Src:%s\nAntes:%s\n\n", source, destiny);
-        memmove(destiny, source, 2);
-        printf("Src:%s\nOriginal:%s\n\n", source, destiny);
+        printf("Antes:%s\n\n", string);
+       
+	memmove(dest, string, 8);
+        
+	printf("Original:%s\n\n", dest);
 
-        printf("Src:%s\nAntes:%s\n\n", source, destiny2);
-        ft_memmove(destiny2, source, 2);
-        printf("Src:%s\nft_:%s\n", source, destiny2);
-        return (0);
+        ft_memmove(dest2, string2, 8);
+        
+	printf("ft_:%s\n", dest2);
+        
+	return (0);
 }*/

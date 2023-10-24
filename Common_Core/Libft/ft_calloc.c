@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:45:01 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/22 20:35:21 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:26:44 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
-	int		*proper;
 
 	if (nmemb == 0 || size == 0)
 		return (0);
-	ptr = (void *)malloc(nmemb * size);
-	proper = (int *)ptr;
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (0);
 	ft_bzero(ptr, (nmemb * size));
 	return (ptr);
 }
@@ -34,13 +34,13 @@ int	main(void)
 	int	n;
 
 	n = 5;
-	mystr = ft_calloc(n, sizeof(int));
-	pcstr = calloc(n, sizeof(int));
-
-	while (n > 0)
+	mystr = ft_calloc(n, sizeof(char));
+	pcstr = calloc(n, sizeof(char));
+	while (n--)
 	{
-		printf("%i %i\n", mystr[n], pcstr[n]);
-		n--;
+		printf("%c %c\n", mystr[n], pcstr[n]);
 	}
+	free(mystr);
+	free(pcstr);
 	return (0);
 }*/
