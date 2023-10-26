@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:45:15 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/20 21:02:35 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:30:14 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	char	*str1;
-	char	*str2;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	str1 = (char *)s1;
-	str2 = (char *)s2;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	i = 0;
 	while (i < n)
 	{
-		if ((str1[i] > str2[i]) || (str1[i] < str2[i]))
+		if (str1[i] != str2[i])
 			return (str1[i] - str2[i]);
 		i++;
 	}

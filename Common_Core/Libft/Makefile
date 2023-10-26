@@ -6,7 +6,7 @@
 #    By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 21:46:22 by thda-sil          #+#    #+#              #
-#    Updated: 2023/10/23 18:47:09 by thda-sil         ###   ########.fr        #
+#    Updated: 2023/10/26 17:48:06 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ SRC = ft_isalpha.c \
 	ft_strnstr.c \
 	ft_atoi.c \
 	ft_calloc.c \
-	ft_strdup.c
+	ft_strdup.c \
+	ft_substr.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -55,5 +56,8 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+war:
+	cd ../Testers/Libft/libft-war-machine && bash grademe.sh
 
 .PHONY: all clean fclean re

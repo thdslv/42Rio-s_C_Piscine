@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 18:27:22 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/23 18:44:22 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:23:35 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s)
 	size_t	i;
 	char	*dup;
 
-	dup = malloc(ft_strlen(s) * sizeof(char) + 1);
+	dup = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!dup)
 		return (0);
 	i = 0;
@@ -30,7 +30,7 @@ char	*ft_strdup(const char *s)
 	return (dup);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 
 int	main()
@@ -39,4 +39,4 @@ int	main()
 	printf("Original: %s\n", strdup(s));
 	printf("ft_: %s\n", ft_strdup(s));
 	return (0);
-}
+}*/
