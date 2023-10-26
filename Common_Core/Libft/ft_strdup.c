@@ -17,25 +17,26 @@ char	*ft_strdup(const char *s)
 	size_t	i;
 	char	*dup;
 
-	dup = malloc(ft_strlen(s) * sizeof(char));
+	dup = malloc(ft_strlen(s) * sizeof(char) + 1);
 	if (!dup)
 		return (0);
 	i = 0;
-	while (dup[i])
+	while (s[i])
 	{
 		dup[i] = s[i];
 		i++;
 	}
+	dup[i] = '\0';
 	return (dup);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 
 int	main()
 {
 	char	*s = "Hello";
 	printf("Original: %s\n", strdup(s));
-	printf("ft_: %s", ft_strdup(s));
+	printf("ft_: %s\n", ft_strdup(s));
 	return (0);
-}*/
+}
