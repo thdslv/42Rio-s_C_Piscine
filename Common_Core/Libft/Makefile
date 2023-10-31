@@ -6,7 +6,7 @@
 #    By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 21:46:22 by thda-sil          #+#    #+#              #
-#    Updated: 2023/10/26 17:48:06 by thda-sil         ###   ########.fr        #
+#    Updated: 2023/10/30 19:51:00 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ OBJ = $(SRC:.c=.o)
 FLAGS = -Wall -Wextra -Werror
 
 .c.o:
-	cc $(FLAGS) -c $< -o $@
+	cc $(FLAGS) -I . -c $< -o $@
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)

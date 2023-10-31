@@ -6,11 +6,11 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:48:54 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/16 19:27:39 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/10/30 19:33:09 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);
