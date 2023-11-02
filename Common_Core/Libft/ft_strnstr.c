@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 21:05:16 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/20 22:04:24 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:31:53 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	x = 0;
 	while (big[i] && (i < len))
 	{
-		while ((big[i + x] == little[x]) && big[i + x])
+		while ((big[i + x] == little[x]) && big[i + x] && ((i + x) < len))
 		{
 			x++;
 		}

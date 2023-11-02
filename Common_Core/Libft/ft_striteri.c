@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 17:20:24 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/01 18:43:23 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/11/01 19:57:00 by thda-sil          #+#    #+#             */
+/*   Updated: 2023/11/01 20:22:28 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+/*#include <stdio.h>
+void	function(unsigned int x, char *p)
 {
-	size_t	i;
+	printf("%i => %s\n", x, p);
+}*/
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
 
 	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
+	while (s[i])
 	{
-		if ((s1[i] > s2[i]) || (s1[i] < s2[i]))
-			return ((unsigned char)s1[i] - s2[i]);
+		f(i, &s[i]);
 		i++;
 	}
-	return (0);
 }
 
-/*#include <stdio.h>
-
-int	main()
+/*int	main()
 {
-	printf("%i\n", ft_strncmp("Hello", "Hdllo", 5));//pos
-	printf("%i\n", ft_strncmp("Hdllo", "Hello", 5));//neg
-	printf("%i\n", ft_strncmp("Hello", "Hello", 5));//0
+	char	str[] = "test";
+
+	ft_striteri(str, function);
 	return (0);
 }*/
