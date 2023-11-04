@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 19:57:00 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/04 16:10:11 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/11/04 18:20:54 by thda-sil          #+#    #+#             */
+/*   Updated: 2023/11/04 18:22:22 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*#include <stdio.h>
-void	function(unsigned int x, char *p)
-{
-	printf("%i => %s\n", x, p);
-}*/
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+char	**ft_split(char const *s, char c)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	
 }
 
-/*int	main()
-{
-	char	str[] = "test";
+#include <stdio.h>
 
-	ft_striteri(str, function);
-	return (0);
-}*/
+int	main()
+{
+	
+}
