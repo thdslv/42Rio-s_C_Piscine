@@ -6,7 +6,7 @@
 #    By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 21:46:22 by thda-sil          #+#    #+#              #
-#    Updated: 2023/11/04 15:11:17 by thda-sil         ###   ########.fr        #
+#    Updated: 2023/11/06 14:14:05 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRC = ft_isalpha.c \
 	ft_substr.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
+	ft_split.c \
 	ft_itoa.c \
 	ft_strmapi.c \
 	ft_striteri.c \
