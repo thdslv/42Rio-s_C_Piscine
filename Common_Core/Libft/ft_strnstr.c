@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 21:05:16 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/01 15:31:53 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:11:15 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	x;
 
-	if (!little)
-		return ((char *)big);
 	i = 0;
-	x = 0;
+	if ((len == 0) || little[i] == '\0')
+		return ((char *)big);
 	while (big[i] && (i < len))
 	{
-		while ((big[i + x] == little[x]) && big[i + x] && ((i + x) < len))
+		x = 0;
+		while ((big[i + x] == little[x]) && ((i + x) < len))
 		{
+			if (big[i + x] == '\0')
+				return ((char *)big);
 			x++;
 		}
 		if (little[x] == '\0')
 			return ((char *)big + i);
 		i++;
-		x = 0;
 	}
 	return (0);
 }

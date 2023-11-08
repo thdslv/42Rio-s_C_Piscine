@@ -6,7 +6,7 @@
 #    By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 21:46:22 by thda-sil          #+#    #+#              #
-#    Updated: 2023/11/06 14:14:05 by thda-sil         ###   ########.fr        #
+#    Updated: 2023/11/08 17:38:23 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,5 +69,10 @@ re: fclean all
 
 war:
 	cd ../Testers/Libft/libft-war-machine && bash grademe.sh
+unit:
+	cd ../Testers/Libft/libft-unit-test && make f && rm -rf ../../../Libft/libft.so
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 .PHONY: all clean fclean re

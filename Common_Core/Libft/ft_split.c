@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:20:54 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/07 21:27:40 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/08 17:10:20 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ char	**ft_split(char const *s, char c)
 
 /*int	main()
 {
-	char	*str = "_UNDEUXTROIS";
-	char	c = '_';
+	char	*str = "  a a  a ";
+	char	c = ' ';
 	size_t	i = 0;
 	size_t	word_c = word_count(str, c) + 1;
 	char	**split;

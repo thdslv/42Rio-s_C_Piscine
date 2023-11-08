@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:45:01 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/23 19:26:44 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:09:12 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
-		return (0);
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (0);
