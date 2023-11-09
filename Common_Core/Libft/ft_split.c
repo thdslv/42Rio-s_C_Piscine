@@ -6,12 +6,11 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:20:54 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/08 17:10:20 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:26:38 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	word_count(char const *s, char c)
 {
@@ -70,7 +69,8 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
-/*int	main()
+/*#include <stdio.h>
+int	main()
 {
 	char	*str = "  a a  a ";
 	char	c = ' ';

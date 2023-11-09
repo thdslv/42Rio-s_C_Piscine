@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:00:13 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/30 19:32:11 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:50:00 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,10 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+
+/*#include <stdio.h>
+
+int	main(void)
+{
+	
+}*/

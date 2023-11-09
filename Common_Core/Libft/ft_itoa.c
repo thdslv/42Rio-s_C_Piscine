@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:52:58 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/01 21:25:55 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/09 20:15:50 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ int	main()
 	printf("%s\n", ft_itoa(-2));
 	printf("%s\n", ft_itoa(-2147483648));
 	printf("%s\n", ft_itoa(0));
+	printf("%d", ft_nbrlen(50));
 	return (0);
 }*/
