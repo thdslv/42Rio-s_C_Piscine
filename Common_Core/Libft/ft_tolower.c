@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:20:11 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/31 14:32:53 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:11:41 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,16 @@ int	ft_tolower(int c)
 		return (c + 32);
 	return (c);
 }
+
+/*#include <stdio.h>
+
+int	main(void)
+{
+	int	x;
+
+	x = 97;
+	printf("%c\n", ft_tolower(x));
+	x = 65;
+	printf("%c\n", ft_tolower(x));
+	return (0);
+}*/

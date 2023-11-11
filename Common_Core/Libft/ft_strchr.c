@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:26:50 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/09 16:54:04 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:15:38 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ char	*ft_strchr(const char *s, int c)
 
 /*#include <stdio.h>
 
-int	main()
+int	main(void)
 {
 	char	str[] = "Thalles";
-	int	x = 97;// 'a'
+	int		x;
 
+	x = 97;
 	printf("%s", ft_strchr(str, x));
 	return (0);
 }*/

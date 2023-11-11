@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 02:34:06 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/23 21:37:27 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:33:37 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,17 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 /*#include <string.h>
 #include <stdio.h>
 
-int	main()
+int	main(void)
 {
 	char    string[] = "lorem ipsum dolor sit amet";
       	char    dest[55];
 	char	dest2[55];
-	char	string2[] = "lorem ipsum dolor sit amet";
 
-        printf("Antes:%s\n\n", string);
-       
+        printf("String: %s\n\n", string);
 	memmove(dest, string, 8);
-        
-	printf("Original:%s\n\n", dest);
-
-        ft_memmove(dest2, string2, 8);
-        
-	printf("ft_:%s\n", dest2);
+	printf("Memmove: %s\n\n", dest);
+        ft_memmove(dest2, string, 8);
+	printf("ft_memmove: %s\n", dest2);
         
 	return (0);
 }*/

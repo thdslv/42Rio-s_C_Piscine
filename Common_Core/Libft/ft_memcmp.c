@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:45:15 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/26 18:30:14 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:30:40 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 /*#include <stdio.h>
 
-int	main()
+int	main(void)
 {
 	printf("%i\n", ft_memcmp("Hello", "Hdllo", 5));//pos
 	printf("%i\n", ft_memcmp("Hdllo", "Hello", 5));//neg

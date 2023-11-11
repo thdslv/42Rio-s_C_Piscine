@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:20:24 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/01 18:43:23 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:24:42 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 /*#include <stdio.h>
 
-int	main()
+int	main(void)
 {
 	printf("%i\n", ft_strncmp("Hello", "Hdllo", 5));//pos
 	printf("%i\n", ft_strncmp("Hdllo", "Hello", 5));//neg

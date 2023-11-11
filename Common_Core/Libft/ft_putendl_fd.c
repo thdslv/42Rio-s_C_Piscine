@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 05:26:45 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/31 15:12:17 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:41:48 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ void	ft_putendl_fd(char *s, int fd)
 
 /*#include <stdio.h>
 
-int	main()
+int	main(void)
 {
-	char	*str = "Hi Moulinette";
+	char	*str;
 
+	str = "Hi Moulinette";
 	ft_putendl_fd(str, 1);
 	return (0);
 }*/

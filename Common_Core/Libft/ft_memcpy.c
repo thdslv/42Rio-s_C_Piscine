@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 23:17:28 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/17 04:02:10 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:38:53 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 /*#include <stdio.h>
 #include <string.h>
 
-int	main()
+int	main(void)
 {
 	char	destiny[] = "Thalles";
 	char	source[] = "da Silva";
 	char	destiny2[] = "Thalles";
 
-	printf("%s  %p\n%s %p\n\n", source, source, destiny, destiny);
-	memcpy(destiny, source, 1);
-	printf("%s  %p\n%s %p\n\n", source, source, destiny, destiny);
+	printf("Source: %s %p\nDest:%s %p\n\n", source, source, destiny, destiny);
+	memcpy(destiny, source, 2);
+	printf("Source: %s %p\nDest:%s %p\n\n", source, source, destiny, destiny);
 
-	printf("%s %p\n%s %p\n\n", source, source, destiny2, destiny2);
+	printf("Source: %s %p\nDest2:%s %p\n\n", source, source, destiny2, destiny2);
 	ft_memcpy(destiny2, source, 2);
-	printf("%s  %p\n%s %p\n", source, source, destiny2, destiny2);
+	printf("Source: %s %p\nDest2:%s %p\n", source, source, destiny2, destiny2);
 	return (0);
 }*/

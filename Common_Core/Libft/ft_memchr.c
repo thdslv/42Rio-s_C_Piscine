@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:55:57 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/26 17:36:56 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:29:04 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 /*#include <stdio.h>
 
-int	main()
+int	main(void)
 {
 	char	str[] = "Thalles";
-	int	x = 97;//'a'
+	int	x = 97;
 	char	*test;
 
 	test = ft_memchr(str, x, 7);

@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 17:11:08 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/01 19:49:59 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:29:39 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	char	*ret;
 
-	if (!s1 || !s2)
-		return (0);
 	str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!str)
 		return (0);
@@ -33,7 +31,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 /*#include <stdio.h>
 
-int	main()
+int	main(void)
 {
 	char	str1[] = "Quaretnta ";
 	char	str2[] = "e dois";

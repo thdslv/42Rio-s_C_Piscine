@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:48:58 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/16 22:50:42 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:16:11 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,14 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+
+/*#include <stdio.h>
+
+int	main(void)
+{
+	char	*s;
+
+	s = "42";
+	printf("%zu\n", ft_strlen(s));
+	return (0);
+}*/

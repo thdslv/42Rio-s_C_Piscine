@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:45:35 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/31 19:58:01 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:05:20 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 int	main(void)
 {
-	size_t n = 0;
+	size_t	n = 2;
+	char	dest1[6] = "Tes";
+	char	src[] = "te";
 
-	char dest1[10] = "Tes";
-	char src1[] = "te";
-
-	printf("Meu retorno: %zu\n", ft_strlcat(dest1, src1, strlen(dest1) + 1 + n));
-	printf("Minha dest: %s\n\n", dest1);
-
-	char dest2[10] = "Tes";
-	char src2[] = "te";
-
-	printf("Retorno original: %zu\n", strlcat(dest2, src2, strlen(dest2) + 1 + n));
+	printf("Meu retorno: %zu\n", ft_strlcat(dest1, src, strlen(dest1) + 1 + n));
+	printf("ft_strlcat: %s\n\n", dest1);
+	char	dest2[6] = "Tes";
+	printf("Retorno original: %zu\n", strlcat(dest2, src, strlen(dest2) + 1 + n));
 	printf("Dest original: %s\n\n", dest2);
-
 	return (0);
 }*/

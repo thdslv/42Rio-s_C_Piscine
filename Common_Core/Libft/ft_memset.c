@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:31:18 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/09 15:52:53 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:37:37 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,14 @@ void	*ft_memset(void *s, int c, size_t n)
 
 /*#include <stdio.h>
 
-int	main()
+int	main(void)
 {
 	char 	str[] = "Thalles da Silva";
 	int	a;
 
 	a = 65;
-	printf("%s\t%p\n", str, str);
-
+	printf("Original: %s\n", str);
 	ft_memset(str, a, 7);
-
-	printf("%s\t%p\n", str, str);
-
-	ft_memset(&a, a, 3);
-
-	printf("%d\t%p\n", a, &a);
+	printf("Modified: %s\n", str);
 	return (0);
 }*/

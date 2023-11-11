@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 12:53:11 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/06 11:59:48 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:30:37 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 /*#include <stdio.h>
 
-int	main()
+int	main(void)
 {
 	char	str[] = "*Biquini*de*bolinha*amarelinha*";
 

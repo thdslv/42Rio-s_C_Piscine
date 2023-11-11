@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:52:10 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/10/18 17:04:15 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:45:15 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,19 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(n + 48, fd);
 }
 
-/*int   main(void)
+/*int	main(void)
 {
-        ft_putnbr_fd(5674, 1);
-        ft_putchar_fd('\n', 1);
-        ft_putnbr_fd(-2147483648, 1);
-        ft_putchar_fd('\n', 1);
-        ft_putnbr_fd(42, 1);
-        ft_putchar_fd('\n', 1);
-        ft_putnbr_fd(2147483647, 1);
-        ft_putchar_fd('\n', 1);
-        ft_putnbr_fd(5, 1);
-        ft_putchar_fd('\n', 1);
-        ft_putnbr_fd(-9, 1);
-        ft_putchar_fd('\n', 1);
-        return (0);
+	ft_putnbr_fd(5674, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-2147483648, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(42, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(2147483647, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(5, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-9, 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
 }*/
