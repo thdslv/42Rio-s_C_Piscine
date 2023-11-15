@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:20:54 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/09 15:26:38 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:07:24 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ size_t	word_count(char const *s, char c)
 	return (words);
 }
 
+static void	free_all(char	**split, size_t w_count)
+{
+	while ((int)w_count >= 0)
+	{
+		free(split[w_count]);
+		w_count--;
+	}
+	free(split);
+}
+
 static void	allocation(char **split, char const *s, char c, size_t w_count)
 {
 	size_t	i;
@@ -45,12 +55,16 @@ static void	allocation(char **split, char const *s, char c, size_t w_count)
 			i++;
 		split[x] = (char *)malloc((i + 1) * sizeof(char));
 		if (!split[x])
-			break ;
+		{
+			free_all(split, x);
+			return ;
+		}
 		if (i)
 			ft_strlcpy(split[x], s, i + 1);
 		s += i;
 		x++;
 	}
+	split[w_count] = 0;
 }
 
 char	**ft_split(char const *s, char c)
@@ -65,12 +79,12 @@ char	**ft_split(char const *s, char c)
 	if (!split)
 		return (NULL);
 	allocation(split, s, c, w_count);
-	split[w_count] = 0;
 	return (split);
 }
 
 /*#include <stdio.h>
-int	main()
+
+int	main(void)
 {
 	char	*str = "  a a  a ";
 	char	c = ' ';
@@ -79,11 +93,11 @@ int	main()
 	char	**split;
 
 	split = ft_split(str, c);
-	while (word_c > 0)
+	while (word_c > i)
 	{
 		printf("%s\n", split[i]);
 		i++;
-		word_c--;
 	}
+	free_all(split, word_c); 
 	return (0);
 }*/

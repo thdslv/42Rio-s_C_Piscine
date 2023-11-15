@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 02:34:06 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/10 15:33:37 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:25:14 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*d;
-	char	*s;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	d = (char *)dest;
-	s = (char *)src;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
 	if (!dest && !src)
-		return (0);
+		return (NULL);
 	if (src > dest)
 	{
 		ft_memcpy(dest, src, n);
@@ -41,14 +41,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 int	main(void)
 {
-	char    string[] = "lorem ipsum dolor sit amet";
-      	char    dest[55];
-	char	dest2[55];
+	char    src[] = "abacaxi";
+      	char    dest[] = "chocolate";
+	char	dest2[] = "chocolate";
 
-        printf("String: %s\n\n", string);
-	memmove(dest, string, 8);
+        printf("String: %s\n\n", src);
+	memmove(dest, src, 7);
 	printf("Memmove: %s\n\n", dest);
-        ft_memmove(dest2, string, 8);
+        ft_memmove(dest2, src, 7);
 	printf("ft_memmove: %s\n", dest2);
         
 	return (0);

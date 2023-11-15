@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:52:58 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/09 20:15:50 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:02:43 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_itoa(int n)
 	len = ft_nbrlen(n);
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
-		return (0);
+		return (NULL);
 	if (n < 0)
 	{
 		str[0] = '-';

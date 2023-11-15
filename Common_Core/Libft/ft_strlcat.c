@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:45:35 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/10 16:05:20 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/13 20:30:36 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	j;
 	size_t	r;
 
+	if ((!dst || !src) && !size)
+		return (0);
 	i = 0;
 	j = 0;
 	r = ft_strlen(src) + ft_strlen(dst);
