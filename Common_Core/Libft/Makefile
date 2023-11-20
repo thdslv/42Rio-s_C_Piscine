@@ -49,6 +49,10 @@ SRC = ft_isalpha.c \
 
 OBJ = $(SRC:.c=.o)
 
+BONUS = 
+
+BONUS_OBJ = $(BONUS:.C=.O)
+
 FLAGS = -Wall -Wextra -Werror
 
 .c.o:
@@ -67,4 +71,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+bonus: 
+	ar rc $(NAME) $(OBJ)
+
+.PHONY: all clean fclean re bonus
