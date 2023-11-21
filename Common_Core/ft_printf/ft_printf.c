@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:07:03 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/15 21:00:34 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:49:51 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,18 @@ static int ft_arg_format(const char c, va_list args)
 		letters = ft_putchar(va_arg(args, int));
 	if (c == 's')
 		letters = ft_putstr(va_arg(args, char *));
-	/*if ()
+	/*if (c == 'p')
 		
-	if ()*/
+	if (c == 'd')
+		
+	if (c == 'i')
+		
+	if (c == 'u')
+		
+	if (c == 'x')
+		
+	if (c == 'X')
+		*/
 	return (letters);
 }
 
