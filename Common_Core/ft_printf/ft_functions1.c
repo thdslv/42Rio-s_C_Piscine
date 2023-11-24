@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_functions1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 12:15:08 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/23 23:20:19 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/11/23 21:34:45 by thda-sil          #+#    #+#             */
+/*   Updated: 2023/11/23 23:21:29 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_putchar(const char c)
+{
+	return (write(1, &c, 1));
+}
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(const char c);
-int	ft_putstr(const char *c);
-int	ft_putnbr(int nb);
-#endif
+int	ft_putstr(const char *s)
+{
+	int	letters;
+
+	letters = 0;
+	while (*s)
+	{
+		write(1, s++, 1);
+		letters++;
+	}
+	return (letters);
+}
+
+/*int	ft_puthex(const char *s)
+{
+	int	letters;
+
+	letters = 0;
+}*/

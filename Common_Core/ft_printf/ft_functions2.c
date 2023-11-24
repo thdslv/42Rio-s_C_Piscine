@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_functions2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 12:15:08 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/23 23:20:19 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/11/23 22:57:37 by thda-sil          #+#    #+#             */
+/*   Updated: 2023/11/23 23:14:51 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_putnbr(int nb)
+{
+	int	letters;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(const char c);
-int	ft_putstr(const char *c);
-int	ft_putnbr(int nb);
-#endif
+	letters = 0;
+	if (nb == -2147483648)
+	{
+		letters += write(1, "-2147483648", 11);
+	}
+	else if (nb < 0)
+	{
+		letters += ft_putchar('-');
+		nb *= -1;
+		ft_putnbr(nb);
+	}
+	else if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		letters += ft_putchar(nb + 48);
+	return (letters);
+}

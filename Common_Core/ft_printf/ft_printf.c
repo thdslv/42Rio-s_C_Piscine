@@ -6,28 +6,11 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:07:03 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/21 12:49:51 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/23 23:50:05 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_putchar(const char c)
-{
-	return (write(1, &c ,1));
-}
-
-int	ft_putstr(const char *s)
-{
-	int	letters;
-
-	if (!s)
-		return (0);
-	letters = 0;
-	while (*s)
-		letters += write(1, s++ ,1);
-	return (letters);
-}
 
 static int ft_arg_format(const char c, va_list args)
 {
@@ -35,23 +18,25 @@ static int ft_arg_format(const char c, va_list args)
 	(void) args;
 	letters = 0;
 	if (c == '%')
-		letters = write(1, "%", 1);
+		letters += write(1, "%", 1);
 	if (c == 'c')
-		letters = ft_putchar(va_arg(args, int));
+		letters += ft_putchar(va_arg(args, int));
 	if (c == 's')
-		letters = ft_putstr(va_arg(args, char *));
+		letters += ft_putstr(va_arg(args, char *));
 	/*if (c == 'p')
-		
-	if (c == 'd')
-		
-	if (c == 'i')
-		
+		letters = ;*/
+	if (c == 'd' || c == 'i')
+		letters += ft_putnbr(va_arg(args, int));
+
+	/*if (c == 'i')
+		letters = ;
+
 	if (c == 'u')
-		
+		letters = ;
 	if (c == 'x')
-		
+		letters = ;
 	if (c == 'X')
-		*/
+		letters = ;*/
 	return (letters);
 }
 
@@ -78,10 +63,11 @@ int	ft_printf(const char *format, ...)
 #include <stdio.h>
 int	main(void)
 {
-	char	*str = "teste: %% %c %s";
+	char	*str = "teste: %% %c %s %i %d";
 
-	ft_printf(str, 'c', "aaa");
+	ft_printf(str, 'c', "aaa", 42, 0.42);
 	printf("\n");
-	printf("teste: %% %c %s", 'c', "aaa");
+	printf("teste: %% %c %s \n", 'c', "aaa");
+	printf("\n\n\n\n\n");
 	return (0);
 }
