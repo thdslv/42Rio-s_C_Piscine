@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:07:03 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/23 23:50:05 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:20:29 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ static int ft_arg_format(const char c, va_list args)
 	if (c == 'd' || c == 'i')
 		letters += ft_putnbr(va_arg(args, int));
 
-	/*if (c == 'i')
-		letters = ;
-
-	if (c == 'u')
+	/*if (c == 'u')
 		letters = ;
 	if (c == 'x')
 		letters = ;
@@ -65,9 +62,9 @@ int	main(void)
 {
 	char	*str = "teste: %% %c %s %i %d";
 
-	ft_printf(str, 'c', "aaa", 42, 0.42);
+	ft_printf(str, 'c', "aaa", 42, 84);
 	printf("\n");
-	printf("teste: %% %c %s \n", 'c', "aaa");
+	printf("teste: %% %c %s %i %d \n", 'c', "aaa", 42, 84);
 	printf("\n\n\n\n\n");
 	return (0);
 }

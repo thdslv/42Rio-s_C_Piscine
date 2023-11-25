@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 22:57:37 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/23 23:14:51 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:39:48 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,11 @@ int	ft_putnbr(int nb)
 	else
 		letters += ft_putchar(nb + 48);
 	return (letters);
+}
+
+int	ft_putunsigned(int nb)
+{
+	int	letters;
+
+	letters = 0;
 }
