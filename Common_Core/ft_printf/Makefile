@@ -12,7 +12,7 @@
 
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_functions1.c ft_functions2.c
+SRC = ft_printf.c ft_functions.c
 
 OBJ = $(SRC:.c=.o)
 

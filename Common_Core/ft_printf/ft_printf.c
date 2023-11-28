@@ -6,41 +6,40 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:07:03 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/24 17:20:29 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/27 23:17:36 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int ft_arg_format(const char c, va_list args)
+static int	ft_arg_format(const char c, va_list args)
 {
 	int	letters;
-	(void) args;
+
 	letters = 0;
 	if (c == '%')
-		letters += write(1, "%", 1);
-	if (c == 'c')
+		letters += ft_putchar('%');
+	else if (c == 'c')
 		letters += ft_putchar(va_arg(args, int));
-	if (c == 's')
+	else if (c == 's')
 		letters += ft_putstr(va_arg(args, char *));
-	/*if (c == 'p')
-		letters = ;*/
-	if (c == 'd' || c == 'i')
+	else if (c == 'p')
+		letters += ft_putptr(va_arg(args, long unsigned int));
+	else if (c == 'd' || c == 'i')
 		letters += ft_putnbr(va_arg(args, int));
-
-	/*if (c == 'u')
-		letters = ;
-	if (c == 'x')
-		letters = ;
-	if (c == 'X')
-		letters = ;*/
+	else if (c == 'u')
+		letters += ft_putnbr_base(va_arg(args, unsigned int), 10, 0);
+	else if (c == 'x')
+		letters += ft_putnbr_base(va_arg(args, unsigned int), 16, 0);
+	else if (c == 'X')
+		letters += ft_putnbr_base(va_arg(args, unsigned int), 16, 1);
 	return (letters);
 }
 
 int	ft_printf(const char *format, ...)
 {
-	va_list args;
-	int	letters;
+	va_list	args;
+	int		letters;
 
 	letters = 0;
 	va_start(args, format);
@@ -56,15 +55,14 @@ int	ft_printf(const char *format, ...)
 	return (letters);
 }
 
-// int letters_printed = ft_printf("teste: %s teste %c", string, char);
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(void)
 {
-	char	*str = "teste: %% %c %s %i %d";
+	char	*str = "teste: %% %c %s %i %d %x %X %x %u %p\n\n";
 
-	ft_printf(str, 'c', "aaa", 42, 84);
-	printf("\n");
-	printf("teste: %% %c %s %i %d \n", 'c', "aaa", 42, 84);
+	printf("%d", ft_printf(str, 'c', "aaa", 42, 84, 42, 42, -42, 42, &str));
+	printf("\n\n");
+	printf("%d", printf(str, 'c', "aaa", 42, 84, 42, 42, -42, 42, &str));
 	printf("\n\n\n\n\n");
 	return (0);
-}
+}*/

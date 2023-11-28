@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 12:15:08 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/23 23:20:19 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/11/27 23:16:53 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,6 @@ int	ft_printf(const char *format, ...);
 int	ft_putchar(const char c);
 int	ft_putstr(const char *c);
 int	ft_putnbr(int nb);
+int	ft_putnbr_base(long unsigned int nb, unsigned int base, int is_upper);
+int	ft_putptr(long unsigned int ptr);
 #endif
