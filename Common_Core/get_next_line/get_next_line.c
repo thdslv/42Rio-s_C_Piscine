@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 12:15:08 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/12/02 15:28:56 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/12/02 15:21:18 by thda-sil          #+#    #+#             */
+/*   Updated: 2023/12/02 16:05:41 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "get_next_line.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+char	*get_next_line(int fd)
+{
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(const char c);
-int	ft_putstr(const char *c);
-int	ft_putnbr(int nb);
-int	ft_putnbr_base(long unsigned int nb, unsigned int base, int is_upper);
-int	ft_putptr(long unsigned int ptr);
-#endif
+}
+
+#include <stdio.h>
+int	main(void)
+{
+	return (0);
+}
