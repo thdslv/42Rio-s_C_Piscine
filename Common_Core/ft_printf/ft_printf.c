@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:07:03 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/12/02 16:37:58 by thda-sil         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:09:26 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_printf(const char *format, ...)
 	return (letters);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(void)
 {
 	char	*str = "teste: %% %c %s %i %d %x %X %u %p\n\n";
@@ -65,4 +65,4 @@ int	main(void)
 	ft_printf("%d", printf(str, 'c', "aaa", 42, 84, 42, 42, 42,  &str));
 	printf("\n\n\n\n\n");
 	return (0);
-}
+}*/
