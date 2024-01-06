@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:21:18 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/12/22 18:14:34 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:00:32 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 char	*get_next_line(int fd)
 {
-
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return(NULL);
+	return();
 }
 
 #include <stdio.h>

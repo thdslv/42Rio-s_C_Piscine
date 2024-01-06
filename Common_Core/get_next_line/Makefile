@@ -6,7 +6,7 @@
 #    By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/02 15:12:55 by thda-sil          #+#    #+#              #
-#    Updated: 2023/12/02 15:20:53 by thda-sil         ###   ########.fr        #
+#    Updated: 2024/01/06 17:32:14 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ = $(SRC:.c=.o)
 FLAGS = -Wall -Wextra -Werror
 
 .c.o:
-	cc $(FLAGS) -I . -c $< -o $@
+	cc $(FLAGS) -D BUFFER_SIZE=42 -I . -c $< -o $@
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
