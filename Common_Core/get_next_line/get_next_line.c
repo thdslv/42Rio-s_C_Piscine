@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:21:18 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/08 17:59:05 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/10 20:45:22 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*read_file(int fd)
 			return (NULL);
 		}
 		line[read_return] = '\0';
-		res = ft_strjoin(result, line);
+		result = ft_strjoin(result, line);
 	}
 	free(line);
 	if (!result)
