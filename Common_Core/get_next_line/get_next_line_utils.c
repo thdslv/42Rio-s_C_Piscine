@@ -6,13 +6,13 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:21:36 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/08 18:10:09 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/12 16:44:27 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft-strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
@@ -37,7 +37,7 @@ int	find_current_line(char *str)
 	return (0);
 }
 
-char	*return_current_line(char *result)
+char *return_current_line(char	*result)
 {
 	int		i;
 	int		check;
@@ -48,7 +48,7 @@ char	*return_current_line(char *result)
 	check = 0;
 	while (result[size] && result[size] != '\n')
 		size++;
-	if (result[size] == '\n');
+	if (result[size] == '\n')
 		check++;
 	line = malloc((size + check + 1) * sizeof(char));
 	if (!line)
@@ -63,4 +63,50 @@ char	*return_current_line(char *result)
 		line[i++] = '\n';
 	line[i] = '\0';
 	return (line);
+}
+
+char	*return_after_separator(char *result)
+{
+	char	*new_result;
+	int		i;
+	int		size;
+
+	size = 0;
+	new_result = malloc((ft_strlen(resutl) - size + 1) *sizeof(char));
+	if (!new_result)
+		return (NULL);
+	i = 0;
+	while (result[size + i])
+	{
+		new_result[i] = result[size + i];
+		i++;
+	}
+	new_result = '\0';
+	free(result);
+	return (new_result);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*str;
+	int		i;
+
+	if (s1)
+	{
+		while (s1[i])
+		{
+			str[i] = s1[i];
+			i++;
+		}
+		free(s1);
+	}
+	while (*s2)
+		str[i++]; = *s2++;
+	str[i] = '\0';
+	if (!*str)
+	{
+		free(str);
+		return (NULL);
+	}
+	return (str);
 }
