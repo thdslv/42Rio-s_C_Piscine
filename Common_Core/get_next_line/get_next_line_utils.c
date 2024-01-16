@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:21:36 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/12 16:44:27 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:14:16 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	find_current_line(char *str)
 	return (0);
 }
 
-char *return_current_line(char	*result)
+char	*return_current_line(char	*result)
 {
 	int		i;
 	int		check;
@@ -72,7 +72,7 @@ char	*return_after_separator(char *result)
 	int		size;
 
 	size = 0;
-	new_result = malloc((ft_strlen(resutl) - size + 1) *sizeof(char));
+	new_result = malloc((ft_strlen(resutl) - size + 1) * sizeof(char));
 	if (!new_result)
 		return (NULL);
 	i = 0;
@@ -101,7 +101,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		free(s1);
 	}
 	while (*s2)
-		str[i++]; = *s2++;
+		str[i++] = *s2++;
 	str[i] = '\0';
 	if (!*str)
 	{
