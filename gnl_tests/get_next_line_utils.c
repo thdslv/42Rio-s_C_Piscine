@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 15:21:52 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/17 20:42:06 by thda-sil         ###   ########.fr       */
+/*   Created: 2024/01/17 20:20:03 by thda-sil          #+#    #+#             */
+/*   Updated: 2024/01/17 20:36:34 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
+#include "get_next_line.h"
 
-char	*get_next_line(int fd);
-size_t	ft_strlen(const char *str);
-int		find_current_line(char *str);
-char	*return_current_line(char *result);
-char	*return_after_separator(char *result);
-char	*ft_strjoin(char *s1, char *s2);
-#endif
+int	find_current_line(char	*str)
+{
+	if (!str)
+		return (0);
+	while (*str)
+	{
+		if (*str == '\n')
+			return (1);
+		str++;
+	}
+	return (0);
+}
+
+/*#include <stdio.h>
+int main()
+{
+	char *str = "teste";
+
+	printf("%d", find_current_line(str));
+	return (0);
+}*/

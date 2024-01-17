@@ -5,20 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 15:21:52 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/17 20:42:06 by thda-sil         ###   ########.fr       */
+/*   Created: 2024/01/17 20:20:32 by thda-sil          #+#    #+#             */
+/*   Updated: 2024/01/17 20:36:47 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
 # include <stdlib.h>
 # include <unistd.h>
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(const char *str);
+char	*read_file(int fd);
 int		find_current_line(char *str);
-char	*return_current_line(char *result);
-char	*return_after_separator(char *result);
-char	*ft_strjoin(char *s1, char *s2);
 #endif
