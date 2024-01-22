@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 20:56:42 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/19 16:41:53 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:48:54 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ char	*read_file(int fd)
 	free(line);
 	if (!bytes_read)
 		return (NULL);
-	line =
-	bytes_read =
+	line = return_current_line(bytes_read);
+	bytes_read = return_after_separator(bytes_read);
 	return (line);
 }
 

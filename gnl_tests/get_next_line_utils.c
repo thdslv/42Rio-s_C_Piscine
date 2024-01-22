@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:20:03 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/19 17:27:59 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:24:37 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,54 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (NULL);
 	}
 	return (str);
+}
+
+char	*return_current_line(char *bytes_read)
+{
+	char	*line;
+	int		size;
+	int		check;
+
+	size = 0;
+	while (bytes_read[size] && result[size] != '\n')
+		size++;
+	check = 0;
+	if (bytes_read[size] == '\n')
+		check++;
+	line = (char *) malloc((size + check + 1) * sizeof(char));
+	if (!line)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		line[i] = bytes_read[i];
+		i++;
+	}
+	if (bytes_read[i] == '\n')
+		line[i++] = '\n';
+	line[i] = '\0';
+	return (line);
+}
+
+char	*return_after_separator(char	*bytes_read)
+{
+	char	*result;
+	int		size;
+	int		i;
+
+	size = 0;
+	result = (char *) malloc((ft_strlen(bytes_read) - size + 1) * sizeof(char));
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (bytes_read[size + i])
+	{
+		result[i] = bytes_read[size + i];
+		i++;
+	}
+	result = '\0';
+	free(bytes_read);
+	return(result);
 }
 
 /*#include <stdio.h>
