@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:21:52 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/17 20:42:06 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/22 19:37:17 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define GET_NEXT_LINE_H
 # include <stdlib.h>
 # include <unistd.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);

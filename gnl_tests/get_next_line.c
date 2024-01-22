@@ -6,16 +6,11 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 20:56:42 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/22 16:48:54 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/22 19:11:27 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdio.h>
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5 
-# endif
+#include "get_next_line.h"
 
 char	*read_file(int fd)
 {
@@ -53,17 +48,20 @@ char	*get_next_line(int fd)
 	return(read_file(fd));
 }
 
+#include <fcntl.h>
+#include <stdio.h>
 int	main(int c, char **v)
 {
 	(void) c;
-	char	line[BUFFER_SIZE];
+	char	*line;
 	int	fd = open(v[1], O_RDONLY);
-	int	holder;
 
-	while ((holder = read(fd, line, BUFFER_SIZE)) > 0)
+	//printf("%s", get_next_line(fd));
+
+	while ((line = get_next_line(fd)))
 	{
 		printf("%s", line);
-		printf("\nTEST\n");
+		free(line);
 	}
 	return (0);
 }

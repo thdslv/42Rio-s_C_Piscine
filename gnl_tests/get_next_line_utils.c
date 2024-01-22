@@ -6,13 +6,13 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:20:03 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/22 18:24:37 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/22 19:33:45 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	find_current_line(char	*str)
+int	find_current_line(const char	*str)
 {
 	if (!str)
 		return (0);
@@ -31,6 +31,7 @@ size_t	ft_strlen(const char *str)
 
 	if (!str)
 		return (0);
+	i = 0;
 	while (str[i] != '\0')
 		i++;
 	return (i);
@@ -45,7 +46,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	str = (char *) malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	if (s1[i])
+	if (s1)
 	{
 		while (s1[i])
 		{
@@ -70,9 +71,10 @@ char	*return_current_line(char *bytes_read)
 	char	*line;
 	int		size;
 	int		check;
+	int		i;
 
 	size = 0;
-	while (bytes_read[size] && result[size] != '\n')
+	while (bytes_read[size] && bytes_read[size] != '\n')
 		size++;
 	check = 0;
 	if (bytes_read[size] == '\n')
@@ -99,6 +101,14 @@ char	*return_after_separator(char	*bytes_read)
 	int		i;
 
 	size = 0;
+	while (bytes_read[size] && bytes_read[size] != '\n')
+		size++;
+	if (!bytes_read[size])
+	{
+		free(bytes_read);
+		return (NULL);
+	}
+	size++;
 	result = (char *) malloc((ft_strlen(bytes_read) - size + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
@@ -108,7 +118,7 @@ char	*return_after_separator(char	*bytes_read)
 		result[i] = bytes_read[size + i];
 		i++;
 	}
-	result = '\0';
+	result[i] = '\0';
 	free(bytes_read);
 	return(result);
 }
