@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 20:56:42 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/22 19:11:27 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:28:43 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*get_next_line(int fd)
 	return(read_file(fd));
 }
 
-#include <fcntl.h>
+/*#include <fcntl.h>
 #include <stdio.h>
 int	main(int c, char **v)
 {
@@ -64,4 +64,4 @@ int	main(int c, char **v)
 		free(line);
 	}
 	return (0);
-}
+}*/
