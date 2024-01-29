@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 20:56:42 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/23 19:28:43 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:00:02 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*read_file(int fd)
 {
 	static char	*bytes_read;
-	char	*line;
-	int		read_return;
+	char		*line;
+	int			read_return;
 
 	line = (char *) malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!line)
@@ -45,7 +45,7 @@ char	*get_next_line(int fd)
 {
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	return(read_file(fd));
+	return (read_file(fd));
 }
 
 /*#include <fcntl.h>

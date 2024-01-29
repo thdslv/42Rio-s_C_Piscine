@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/29 14:56:35 by thda-sil          #+#    #+#             */
+/*   Updated: 2024/01/29 15:15:42 by thda-sil         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line_bonus.h"
 
 char	*read_file(int fd)
 {
-	int			read_return;
-	char		*line;
 	static char	*bytes_read[MAX_FD] = {NULL};
+	char		*line;
+	int			read_return;
 
 	line = (char *) malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!line)
@@ -25,7 +37,7 @@ char	*read_file(int fd)
 	if (!bytes_read[fd])
 		return (NULL);
 	line = return_current_line(bytes_read[fd]);
-	res[fd] = return_after_sep(bytes_read[fd]);
+	bytes_read[fd] = return_after_sep(bytes_read[fd]);
 	return (line);
 }
 

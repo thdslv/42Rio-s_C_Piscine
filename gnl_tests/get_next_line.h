@@ -6,14 +6,16 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:20:32 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/22 19:39:54 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:37:50 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
 # include <stdlib.h>
 # include <unistd.h>
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif

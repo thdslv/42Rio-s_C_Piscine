@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:20:03 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/22 19:33:45 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:00:17 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,14 +120,5 @@ char	*return_after_separator(char	*bytes_read)
 	}
 	result[i] = '\0';
 	free(bytes_read);
-	return(result);
+	return (result);
 }
-
-/*#include <stdio.h>
-int main()
-{
-	char *str = "teste";
-
-	printf("%d", find_current_line(str));
-	return (0);
-}*/
