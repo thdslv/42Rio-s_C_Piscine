@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 15:21:18 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/01/10 20:45:22 by thda-sil         ###   ########.fr       */
+/*   Created: 2024/01/10 20:56:42 by thda-sil          #+#    #+#             */
+/*   Updated: 2024/01/29 20:32:04 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 char	*read_file(int fd)
 {
-	static char	*result;
+	static char	*bytes_read;
 	char		*line;
 	int			read_return;
 
-	line = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	line = (char *) malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!line)
 		return (NULL);
 	read_return = 1;
-	while (read_return > 0 && !find_current_line(result))
+	while (read_return > 0 && !find_current_line(bytes_read))
 	{
 		read_return = read(fd, line, BUFFER_SIZE);
 		if (read_return < 0)
@@ -31,13 +31,13 @@ char	*read_file(int fd)
 			return (NULL);
 		}
 		line[read_return] = '\0';
-		result = ft_strjoin(result, line);
+		bytes_read = ft_strjoin(bytes_read, line);
 	}
 	free(line);
-	if (!result)
+	if (!bytes_read)
 		return (NULL);
-	line = return_current_line(result);
-	result = return_after_separator(result);
+	line = return_current_line(bytes_read);
+	bytes_read = return_after_separator(bytes_read);
 	return (line);
 }
 
@@ -48,14 +48,21 @@ char	*get_next_line(int fd)
 	return (read_file(fd));
 }
 
+/*#include <fcntl.h>
 #include <stdio.h>
-int	main(void)
+int	main(int c, char **v)
 {
-	int	fd;
-	char	*line;
+	(void) c;
+	(void) v;
+	//char	*line;
+	//int	fd = open(v[1], O_RDONLY);
 
-	fd = open(file.txt, O_RDONLY);
-	str = get_next_line(fd);
-	free();
+	printf("%s", get_next_line(-1));
+
+	while ((line = get_next_line(fd)))
+	{
+		printf("%s", line);
+		free(line);
+	}
 	return (0);
-}
+}*/
