@@ -6,20 +6,22 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:43:05 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/13 18:41:44 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:31:50 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#icnlude "../includes/libft.h"
 
 int	ft_atoi(const char *nptr)
 {
 	int	i;
-	int	res;
+	int	result;
 	int	sign;
 
 	i = 0;
-	res = 0;
+	result = 0;
 	sign = 1;
-	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
+	while (ft_isspace(nptr[i]))
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
@@ -27,12 +29,12 @@ int	ft_atoi(const char *nptr)
 			sign = -sign;
 		i++;
 	}
-	while (nptr[i] >= 48 && nptr[i] <= 57)
+	while (ft_isdigit(nptr[i]))
 	{
 		res = res * 10 + (nptr[i] - 48);
 		i++;
 	}
-	return (res * sign);
+	return (result * sign);
 }
 
 /*#include <stdio.h>

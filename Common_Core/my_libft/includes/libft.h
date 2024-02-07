@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:44:57 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/09 20:12:38 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:28:56 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,27 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+
+# ifndef MIN_INT
+#  define MIN_INT -2147483648
+# endif
+
+# ifndef MAX_INT
+#  define MAX_INT
+# endif
+
+# ifndef MAX_FD
+#  define MAX_FD 1024
+# endif
+
+typedef int	t_bool;
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
