@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:44:57 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 19:28:56 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:59:41 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-typedef struct s_list
-{
-	void	*content;
-	struct s_list	*next;
-}		t_list;
 
 #endif

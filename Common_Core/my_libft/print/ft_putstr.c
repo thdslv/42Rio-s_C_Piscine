@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:14:16 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 18:40:32 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:10:47 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_putstr(const char *s)
 	int	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 		ft_putchar(s[i++]);
 	return (i);
 }

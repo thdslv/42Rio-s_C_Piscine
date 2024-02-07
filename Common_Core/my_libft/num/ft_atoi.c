@@ -6,11 +6,11 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:43:05 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 17:31:50 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:09:22 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#icnlude "../includes/libft.h"
+#include "../includes/libft.h"
 
 int	ft_atoi(const char *nptr)
 {

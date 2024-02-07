@@ -6,16 +6,16 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:53:10 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 19:50:32 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:10:16 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_putnbr_base(long unsigned int nbr, unsigned int base, int is_upper)
 {
-	int	digits;
+	int		digits;
 	char	*base_chars;
 
-	if(is_upper)
+	if (is_upper)
 		base_chars = "0123456789ABCDEF";
 	else
 		base_chars = "0123456789abcdef";

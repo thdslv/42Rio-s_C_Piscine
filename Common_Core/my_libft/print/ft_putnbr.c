@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:27:31 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 18:40:12 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:10:37 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_putnbr(int nb)
 	{
 		digits += ft_putchar('-');
 		nb *= -1;
-		digits += ft-putnbr(nb);
+		digits += ft_putnbr(nb);
 	}
 	else if (nb > 9)
 	{

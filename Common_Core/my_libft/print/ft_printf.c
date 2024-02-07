@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:29:48 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 19:45:30 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/07 20:09:38 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int	ft_printf(const char *format, ...)
 
 	va_start(args, format);
 	letters = 0;
-	while(*format)
+	while (*format)
 	{
-		if(*format == '%')
+		if (*format == '%')
 			letters += ft_arg_format(*(++format), args);
 		else
 			letters += write(1, format, 1);
