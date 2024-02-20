@@ -6,13 +6,13 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:20:54 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/13 17:07:24 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:47:12 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	word_count(char const *s, char c)
+static size_t	word_count(char const *s, char c)
 {
 	size_t	words;
 	size_t	i;
