@@ -6,13 +6,13 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:52:58 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/13 19:02:43 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:39:21 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nbrlen(int n)
+static int	ft_nbrlen(int n)
 {
 	int	i;
 

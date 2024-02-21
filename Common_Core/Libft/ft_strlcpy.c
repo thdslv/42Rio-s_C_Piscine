@@ -6,22 +6,22 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 07:38:15 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/10 15:43:53 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:22:38 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	if (size == 0)
 		return (ft_strlen(src));
 	if (ft_strlen(src) < size)
-		ft_memcpy(dest, src, ft_strlen(src) + 1);
+		ft_memcpy(dst, src, ft_strlen(src) + 1);
 	else
 	{
-		ft_memcpy(dest, src, size - 1);
-		dest[size - 1] = '\0';
+		ft_memcpy(dst, src, size - 1);
+		dst[size - 1] = '\0';
 	}
 	return (ft_strlen(src));
 }
