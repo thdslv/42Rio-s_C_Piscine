@@ -6,7 +6,7 @@
 #    By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 21:46:22 by thda-sil          #+#    #+#              #
-#    Updated: 2023/11/13 21:18:47 by thda-sil         ###   ########.fr        #
+#    Updated: 2024/02/22 15:41:13 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,9 +49,6 @@ SRC = ft_isalpha.c \
 
 OBJ = $(SRC:.c=.o)
 
-BONUS = 
-
-BONUS_OBJ = $(BONUS:.C=.O)
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -71,7 +68,8 @@ fclean: clean
 
 re: fclean all
 
-bonus: 
-	ar rc $(NAME) $(OBJ)
+so:
+	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 .PHONY: all clean fclean re bonus
