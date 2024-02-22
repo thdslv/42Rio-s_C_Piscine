@@ -10,4 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+int	main(int argc, char **argv)
+{
+	int		pid;
+	char	*message;
 
+	if (argc != 3)
+	{
+		ft_printf("Uso: ./client [PID] [mensagem]\n");
+		return (1);
+	}
+	pid = ft_atoi(argv[1]);
+	message = argv[2];
+}
