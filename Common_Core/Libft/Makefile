@@ -72,7 +72,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean: 
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
