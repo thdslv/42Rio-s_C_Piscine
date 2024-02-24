@@ -6,11 +6,13 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:47:27 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/20 15:47:29 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/23 21:20:02 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list	ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+#include "libft.h"
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_node;

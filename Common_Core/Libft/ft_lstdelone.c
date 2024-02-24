@@ -6,11 +6,13 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:43:09 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/20 15:43:34 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/23 21:24:24 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstdelone(t_list *lst, void(*del)(void *))
+#include "libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
 		return ;

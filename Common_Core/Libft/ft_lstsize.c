@@ -6,13 +6,13 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:56:00 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/21 11:56:01 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/23 20:11:48 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize( t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	size_t	i;
 

@@ -6,9 +6,11 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:45:53 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/20 15:45:55 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/23 20:31:13 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

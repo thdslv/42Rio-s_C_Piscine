@@ -6,7 +6,7 @@
 #    By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 21:46:22 by thda-sil          #+#    #+#              #
-#    Updated: 2024/02/22 15:41:13 by thda-sil         ###   ########.fr        #
+#    Updated: 2024/02/23 19:20:52 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,17 @@ SRC = ft_isalpha.c \
 
 OBJ = $(SRC:.c=.o)
 
+BONUS = ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c \
+
+BONUS_OBJ = $(BONUS:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -67,6 +78,9 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rc $(NAME) $(OBJ) $(BONUS_OBJ)
 
 so:
 	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRC)
