@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:53:43 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/23 20:29:56 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:08:29 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (!lst || !new)
+	if (!lst)
 		return ;
 	if (!*lst)
 	{

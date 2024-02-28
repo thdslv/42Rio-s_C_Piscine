@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:55:44 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/20 15:47:53 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:03:59 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new;
+	t_list	*new_node;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }

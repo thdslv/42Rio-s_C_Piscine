@@ -1,8 +1,8 @@
 #include "list.h"
 
-void del(void **content)
+void del(void *content)
 {
-	if (!*content)
+	if (!content)
 		return ;
-	free(*content);
+	free(content);
 }

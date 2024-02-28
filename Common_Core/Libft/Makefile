@@ -6,7 +6,7 @@
 #    By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 21:46:22 by thda-sil          #+#    #+#              #
-#    Updated: 2024/02/23 19:20:52 by thda-sil         ###   ########.fr        #
+#    Updated: 2024/02/28 16:38:08 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,9 +81,5 @@ re: fclean all
 
 bonus: $(OBJ) $(BONUS_OBJ)
 	ar rc $(NAME) $(OBJ) $(BONUS_OBJ)
-
-so:
-	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 .PHONY: all clean fclean re bonus

@@ -12,6 +12,7 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
 	del(lst->content);
 	free(lst);
 }
+
 int main()
 {
 	t_list *list;
@@ -26,7 +27,7 @@ int main()
         ft_lstadd_back(&list, node2);
         printf("\n%s", (char*)list->content);//should be "test1"
         printf("\n%s", (char*)list->next->content);//should be "test2"
-        ft_lstdelone(node2, del(node2->content));
-        printf("\n%s", (char*)list->next->content);//should be ""
+        ft_lstdelone(node2, del);
+        printf("\n%s", (char*)list->next->content);//should be ????
 	return 0;
 }
