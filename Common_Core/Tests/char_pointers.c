@@ -3,8 +3,8 @@
 void change(char **str)
 {	// str is a char** so it has the & to a char*
 	*str = "Test2"; // str is &s1 so derreferencing it (*str)
-			// gives us s1 ("Test") s1 has &'t' so *s = 
-	printf("\ns in func: %s", *str);
+			// gives us s1 ("Test") s1 has &'t' so *s = 'T'
+	printf("\n%s", *str);
 }
 
 int main()

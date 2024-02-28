@@ -17,10 +17,10 @@ t_list *ft_lstnew(void *content)
 	return new_node;
 }
 
-int main()
+/*int main()
 {
 	char *s = "Quarante et deux";
 	t_list *node = ft_lstnew((void *)s);
 	printf("%s\n", (char *)node->content);
 	return 0;
-}
+}*/
