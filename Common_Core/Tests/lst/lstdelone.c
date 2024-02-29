@@ -17,17 +17,27 @@ int main()
 {
 	t_list *list;
         t_list *node2;
-        char *s = "test1";
+        char *s;
+
+	s = malloc(7);
+	s[0] = 't';
+	s[1] = 'e';
+	s[2] = 's';
+	s[3]= 't';
+	s[4] = 'e';
+	s[5] = '1';
+	s[6] = '\0';
 
         list = ft_lstnew((void*)s);
         printf("\n%s", (char*)list->content);//should be "test1"
-        s = "test2";
+	s[5] = '2';
         node2 = ft_lstnew((void*)s);
         printf("\n%s", (char*)node2->content);//should be "test2"
         ft_lstadd_back(&list, node2);
         printf("\n%s", (char*)list->content);//should be "test1"
         printf("\n%s", (char*)list->next->content);//should be "test2"
         ft_lstdelone(node2, del);
-        printf("\n%s", (char*)list->next->content);//should be ????
+	list->next = NULL;
+	printf("\n%d", ft_lstsize(list));//should be 1
 	return 0;
 }
