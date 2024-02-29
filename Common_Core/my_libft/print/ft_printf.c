@@ -24,15 +24,15 @@ static int	ft_arg_format(const char c, va_list args)
 	else if (c == 's')
 		letters += ft_putstr(va_arg(args, char *));
 	else if (c == 'p')
-		letters += ft_putptr(va_arg(args, unsigned long int));
+		letters += ft_putptr(va_arg(args, unsigned long int), 0);
 	else if (c == 'd' || c == 'i')
-		letters += ft_putnbr(va_args(args, int));
+		letters += ft_putnbr(va_arg(args, int));
 	else if (c == 'u')
 		letters += ft_putnbr_base(va_arg(args, unsigned int), 10, 0);
 	else if (c == 'x')
 		letters += ft_putnbr_base(va_arg(args, unsigned int), 16, 0);
 	else if (c == 'X')
-		letters += ft_putnbr_base(va_args(args, unsigned int), 16, 1);
+		letters += ft_putnbr_base(va_arg(args, unsigned int), 16, 1);
 	return (letters);
 }
 
@@ -53,4 +53,10 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (letters);
+}
+
+int main()
+{
+	ft_printf("hi");
+	return 0;
 }

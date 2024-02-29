@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/libft.h"
+
 int	ft_putnbr_base(long unsigned int nbr, unsigned int base, int is_upper)
 {
 	int		digits;
