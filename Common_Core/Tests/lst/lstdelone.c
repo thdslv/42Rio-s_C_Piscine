@@ -13,7 +13,7 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
 	free(lst);
 }
 
-int main()
+/*int main()
 {
 	t_list *list;
         t_list *node2;
@@ -40,4 +40,4 @@ int main()
 	list->next = NULL;
 	printf("\n%d", ft_lstsize(list));//should be 1
 	return 0;
-}
+}*/
