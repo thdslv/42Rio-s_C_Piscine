@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 17:11:08 by thda-sil          #+#    #+#             */
-/*   Updated: 2023/11/13 17:29:29 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/29 22:44:40 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!str)
-		return (0);
+		return (NULL);
 	ret = str;
 	while (*s1)
 		*str++ = *s1++;

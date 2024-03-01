@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:46:29 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 18:48:39 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/29 19:56:34 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int	ft_putendl(const char *str)
 
 	i = 0;
 	i += ft_putstr(str);
-	i += fr_putstr("\n");
+	i += ft_putstr("\n");
 	return (i);
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 /*#include <stdio.h>
 void	function(unsigned int x, char *p)
 {

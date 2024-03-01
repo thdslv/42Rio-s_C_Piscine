@@ -6,9 +6,10 @@
 #    By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 21:46:22 by thda-sil          #+#    #+#              #
-#    Updated: 2024/02/28 16:38:08 by thda-sil         ###   ########.fr        #
+#    Updated: 2024/02/29 18:56:22 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+MAKEFLAGS += --silent
 
 NAME = libft.a
 
@@ -65,9 +66,11 @@ FLAGS = -Wall -Wextra -Werror
 
 .c.o:
 	cc $(FLAGS) -I . -c $< -o $@
+	printf "compiling $<     \r"
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
+	printf "\ncompile success!\n"
 
 all: $(NAME)
 

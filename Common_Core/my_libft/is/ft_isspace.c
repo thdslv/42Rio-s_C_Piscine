@@ -6,11 +6,11 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:07:43 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 17:09:01 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/29 21:38:32 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(char c)
+int	ft_isspace(int c)
 {
 	if ((c == 32) || c >= 9 && c <= 13)
 		return (1);

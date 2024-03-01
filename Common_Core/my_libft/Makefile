@@ -6,9 +6,10 @@
 #    By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 21:46:22 by thda-sil          #+#    #+#              #
-#    Updated: 2023/11/13 21:18:47 by thda-sil         ###   ########.fr        #
+#    Updated: 2024/03/01 00:00:30 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+MAKEFLAGS += --silent
 
 NAME = libft.a
 
@@ -46,32 +47,34 @@ SRC = ft_isalpha.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-
-OBJ = $(SRC:.c=.o)
-
-BONUS = 
-
-BONUS_OBJ = $(BONUS:.C=.O)
+	ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c \
 
 FLAGS = -Wall -Wextra -Werror
 
 .c.o:
 	cc $(FLAGS) -I . -c $< -o $@
+	printf "compiling $<     \r"
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
+	printf "\ncompile success!\n"
 
 all: $(NAME)
 
 clean: 
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-bonus: 
-	ar rc $(NAME) $(OBJ)
 
 .PHONY: all clean fclean re bonus

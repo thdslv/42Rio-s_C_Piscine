@@ -6,13 +6,13 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 05:26:45 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 18:50:03 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/29 19:58:17 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(const char *s, int fd)
 {
 	int	i;
 

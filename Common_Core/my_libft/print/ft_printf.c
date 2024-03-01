@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:29:48 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 20:09:38 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:11:45 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,4 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (letters);
-}
-
-int main()
-{
-	ft_printf("hi");
-	return 0;
 }

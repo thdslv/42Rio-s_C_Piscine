@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:53:10 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/07 20:10:16 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:05:19 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int	ft_putnbr_base(long unsigned int nbr, unsigned int base, int is_upper)
 		digits += ft_putnbr_base(nbr % base, base, is_upper);
 	}
 	else
-		digits += ft_putchar(base_chars[nb]);
+		digits += ft_putchar(base_chars[nbr]);
 	return (digits);
 }

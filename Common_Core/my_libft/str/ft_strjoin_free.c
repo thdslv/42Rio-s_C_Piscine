@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inyancat <inyancat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created  2016/11/11 16:47:32 by inyancat          #+#    #+#             */
-/*   Updated  2016/11/12 20:21:42 by inyancat         ###   ########.fr       */
+/*   Created: 2024/02/29 23:06:41 by thda-sil          #+#    #+#             */
+/*   Updated: 2024/02/29 23:24:17 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
-#include <stdarg.h>
-extern int g_log_fd;
+#include "../includes/libft.h"
 
-void error(int code, int a, const char *pattern, ...)
+char	*ft_strjoin_free(char *s1, char *s2, int free_str)
 {
-	va_list	va;
+	char	*str;
 
-	va_start(va, pattern);
-	(void)a;
-	vdprintf(g_log_fd, pattern, va);
-	dprintf(g_log_fd, "\n");
-	va_end(va);
-	exit(code);
+	str = ft_strjoin(s1, s2);
+	if (free_str == 1 || free_str == 3)
+		free(s1);
+	if (free_str == 2 || free_str == 3)
+		free(s2);
+	return (str);
 }
