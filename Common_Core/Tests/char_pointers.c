@@ -7,7 +7,7 @@ void change(char **str)
 	printf("\n%s", *str);
 }
 
-int main()
+/*int main()
 {
 	char *s1 = "Test1"; // s1 = the adress of 'T'
 	char **p = &s1; // p = the adress of s1
@@ -15,4 +15,4 @@ int main()
 	change(&s1); // the adress of s1 (&s || p) is sent
 	printf("\n%s", s1);
 	return 0;
-}
+}*/

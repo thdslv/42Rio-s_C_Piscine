@@ -118,7 +118,7 @@ char	*get_next_line(int fd)
 	return (read_file(fd));
 }
 
-/*#include <fcntl.h>
+#include <fcntl.h>
 #include <stdio.h>
 int     main(int c, char **v)
 {
@@ -126,12 +126,12 @@ int     main(int c, char **v)
         char    *line;
         int     fd = open(v[1], O_RDONLY);
 
-        //printf("%s", get_next_line(fd));
-
+	printf("%s", get_next_line(fd));
+	/*printf("###\n");
         while ((line = get_next_line(fd)))
         {
                 printf("%s", line);
                 free(line);
-        }
+        }*/
         return (0);
-}*/
+}

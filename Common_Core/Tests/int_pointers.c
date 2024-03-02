@@ -6,7 +6,7 @@ int	add_ten(int nb)
 	printf("\nnb + 10: %d", nb);
 }
 
-int main()
+/*int main()
 {
 	int n1 = 42;
 	int *p;
@@ -32,4 +32,4 @@ int main()
 	printf("\nValue of n2 + 10: %d", n2);
 
 	return 0;
-}
+}*/

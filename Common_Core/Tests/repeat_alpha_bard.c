@@ -33,8 +33,9 @@ void repeat_alpha(char *str)
     }
 }
 
-int main(int argc, char **argv) {
+/*int main(int argc, char **argv)
+{
     char *str = "!a!bc!!";
     repeat_alpha(str);
     return (0);
-}
+}*/
