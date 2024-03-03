@@ -53,11 +53,11 @@ char	*get_next_line(int fd)
 int	main(int c, char **v)
 {
 	(void) c;
-	(void) v;
-	//char	*line;
-	//int	fd = open(v[1], O_RDONLY);
+	//(void) v;
+	char	*line;
+	int	fd = open(v[1], O_RDONLY);
 
-	printf("%s", get_next_line(-1));
+	//printf("%s", get_next_line(fd));
 
 	while ((line = get_next_line(fd)))
 	{

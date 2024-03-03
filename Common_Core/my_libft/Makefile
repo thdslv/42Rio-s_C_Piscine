@@ -9,70 +9,73 @@
 #    Updated: 2024/03/01 00:00:30 by thda-sil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 MAKEFLAGS += --silent
 
 NAME = libft.a
 
-SRC = ft_isalnum.c \
-	ft_isalpha.c \
-	ft_isascii.c \
-	ft_isdigit.c \
-	ft_islower.c \
-	ft_isprint.c \
-	ft_isspace.c \
-	ft_isupper.c \
-	ft_lstadd_back.c \
-	ft_lstadd_front.c \
-	ft_lstclear.c \
-	ft_lstdelone.c \
-	ft_lstiter.c \
-	ft_lstlast.c \
-	ft_lstmap.c \
-	ft_lstnew.c \
-	ft_lstsize.c \
-	ft_bzero.c \
-	ft_calloc.c \
-	ft_memchr.c \
-	ft_memcmp.c \
-	ft_memcpy.c \
-	ft_memmove.c \
-	ft_memset.c \
-	ft_atoi.c \
-	ft_printf.c \
-	ft_putchar.c \
-	ft_putchar_fd.c \
-	ft_putendl.c \
-	ft_putendl_fd.c \
-	ft_putnbr.c \
-	ft_putnbr_base.c \
-	ft_putnbr_fd.c \
-	ft_putptr.c \
-	ft_putstr.c \
-	ft_putstr_fd.c \
-	ft_itoa.c \
-	ft_split.c \
-	ft_strchr.c \
-	ft_strdup.c \
-	ft_striteri.c \
-	ft_strjoin.c \
-	ft_strjoin_free.c \
-	ft_strlcat.c \
-	ft_strlcpy.c \
-	ft_strlen.c \
-	ft_strmapi.c \
-	ft_strncmp.c \
-	ft_strnstr.c \
-	ft_strrchr.c \
-	ft_strtrim.c \
-	ft_substr.c \
-	get_next_line.c \
-	ft_tolower.c \
-	ft_toupper.c \
+SRC = is/ft_isalnum.c \
+	is/ft_isalpha.c \
+	is/ft_isascii.c \
+	is/ft_isdigit.c \
+	is/ft_islower.c \
+	is/ft_isprint.c \
+	is/ft_isspace.c \
+	is/ft_isupper.c \
+	list/ft_lstadd_back.c \
+	list/ft_lstadd_front.c \
+	list/ft_lstclear.c \
+	list/ft_lstdelone.c \
+	list/ft_lstiter.c \
+	list/ft_lstlast.c \
+	list/ft_lstmap.c \
+	list/ft_lstnew.c \
+	list/ft_lstsize.c \
+	mem/ft_bzero.c \
+	mem/ft_calloc.c \
+	mem/ft_memchr.c \
+	mem/ft_memcmp.c \
+	mem/ft_memcpy.c \
+	mem/ft_memmove.c \
+	mem/ft_memset.c \
+	num/ft_atoi.c \
+	print/ft_printf.c \
+	print/ft_putchar.c \
+	print/ft_putchar_fd.c \
+	print/ft_putendl.c \
+	print/ft_putendl_fd.c \
+	print/ft_putnbr.c \
+	print/ft_putnbr_base.c \
+	print/ft_putnbr_fd.c \
+	print/ft_putptr.c \
+	print/ft_putstr.c \
+	print/ft_putstr_fd.c \
+	str/ft_itoa.c \
+	str/ft_split.c \
+	str/ft_strchr.c \
+	str/ft_strdup.c \
+	str/ft_striteri.c \
+	str/ft_strjoin.c \
+	str/ft_strjoin_free.c \
+	str/ft_strlcat.c \
+	str/ft_strlcpy.c \
+	str/ft_strlen.c \
+	str/ft_strmapi.c \
+	str/ft_strncmp.c \
+	str/ft_strnstr.c \
+	str/ft_strrchr.c \
+	str/ft_strtrim.c \
+	str/ft_substr.c \
+	str/get_next_line.c \
+	to/ft_tolower.c \
+	to/ft_toupper.c \
+
+OBJ = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
 .c.o:
-	cc $(FLAGS) -I . -c $< -o $@
+	cc $(FLAGS) -I includes -c $< -o $@
 	printf "compiling $<     \r"
 
 $(NAME): $(OBJ)
@@ -82,7 +85,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean: 
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

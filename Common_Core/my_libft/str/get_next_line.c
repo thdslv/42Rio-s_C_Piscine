@@ -11,9 +11,11 @@
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include <stdio.h>
 
 static int	find_current_line(const char *str)
 {
+	printf("#\n");
 	if (!str)
 		return (0);
 	while (*str)
@@ -119,11 +121,10 @@ char	*get_next_line(int fd)
 }
 
 #include <fcntl.h>
-#include <stdio.h>
 int     main(int c, char **v)
 {
         (void) c;
-        char    *line;
+	//char    *line;
         int     fd = open(v[1], O_RDONLY);
 
 	printf("%s", get_next_line(fd));

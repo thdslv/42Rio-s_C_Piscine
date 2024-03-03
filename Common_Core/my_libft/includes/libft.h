@@ -42,14 +42,14 @@ typedef struct s_list
 typedef int	t_bool;
 
 // is functions
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
 int		ft_isalnum(int c);
+int		ft_isalpha(int c);
 int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_islower(int c);
 int		ft_isprint(int c);
 int		ft_isspace(int c);
 int		ft_isupper(int c);
-int		ft_islower(int c);
 
 // list functions
 t_list	*ft_lstnew(void *content);
@@ -81,7 +81,7 @@ void	ft_putchar_fd(char c, int fd);
 int		ft_putendl(const char *str);
 int		ft_putendl_fd(const char *s, int fd);
 int		ft_putnbr(int nb);
-int		ft_putnbr_base(long unsigned int nbr, unsigned int base, int is_upper);
+int		ft_putnbr_base(long long int nbr, unsigned int base, int is_upper);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_putptr(unsigned long int ptr, t_bool is_upper);
 int		ft_putstr(const char *s);
@@ -104,6 +104,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*get_next_line(int fd);
 
 // to functions
 int		ft_toupper(int c);
