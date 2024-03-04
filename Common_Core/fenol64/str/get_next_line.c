@@ -6,7 +6,7 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 18:43:58 by fnascime          #+#    #+#             */
-/*   Updated: 2024/01/03 15:31:28 by fnascime         ###   ########.fr       */
+/*   Updated: 2024/03/04 16:50:59 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,16 +122,15 @@ char	*get_next_line(int fd)
 #include <stdio.h>
 int     main(int c, char **v)
 {
-        (void) c;
-        //char    *line;
-        int     fd = open(v[1], O_RDONLY);
+	(void) c;
+	char    *line;
+	int     fd = open(v[1], O_RDONLY);
 
-        printf("%s", get_next_line(fd));
-        /*printf("###\n");
-        while ((line = get_next_line(fd)))
-        {
-                printf("%s", line);
-                free(line);
-        }*/
+	//printf("%s", get_next_line(fd));
+	while ((line = get_next_line(fd)))
+	{
+		printf("%s", line);
+		free(line);
+	}
         return (0);
 }

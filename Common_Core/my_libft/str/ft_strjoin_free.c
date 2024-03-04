@@ -16,16 +16,10 @@ char	*ft_strjoin_free(char *s1, char *s2, int free_str)
 {
 	char	*str;
 
-	printf("\n#8\ncame to joinFree\n");//*******
-	printf("\n#9\nstatic: %s # line: %s #\n", s1, s2);//****
 	str = ft_strjoin(s1, s2);
-	printf("\n#\nstatic+line: %s #\n", str);//*******
-	printf("maybe?\n");//************
 	if (free_str == 1 || free_str == 3)
 		free(s1);
-	printf("did it free?\n");//*************
 	if (free_str == 2 || free_str == 3)
 		free(s2);
-	printf("did it get here?\n");//******
 	return (str);
 }

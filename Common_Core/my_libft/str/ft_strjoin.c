@@ -17,11 +17,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	size_t	len;
 
-	printf("\n#10\ncame to join\n");//********
-	printf("\n#11\nstatic: %s # line: %s\n", s1, s2);//*******
 	if (!s1 || !s2)
 		return (NULL);
-	printf("\n#12\npast NULL check?\n");//*****
 	len = ft_strlen(s1) + ft_strlen(s2);
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
