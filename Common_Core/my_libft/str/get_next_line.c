@@ -11,13 +11,14 @@
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-#include <stdio.h>
 
 static int	find_current_line(const char *str)
 {
-	printf("#\n");
+	printf("\n#3\nentered fdCurLine\n");//***************
+	printf("\n#4\nvalue read: %s #\n", str);//*****
 	if (!str)
 		return (0);
+	printf("read something\n");//***********
 	while (*str)
 	{
 		if (*str == '\n')
@@ -90,24 +91,35 @@ char	*read_file(int fd)
 	char		*line;
 	int			read_return;
 
+	printf("\n#0\nstatic is created null: %s #\n", bytes_read[fd]);//***
 	line = (char *) malloc((BUFFER_SIZE + 1) * sizeof(char));
+	printf("\n#1\nline aft malloc: %s #\n", line);//*******
 	if (!line)
 		return (NULL);
+	printf("\n#2\nline aft malloc check: %s #\n", line);/**********/
 	read_return = 1;
 	while (read_return > 0 && !find_current_line(bytes_read[fd]))
 	{
 		read_return = read(fd, line, BUFFER_SIZE);
+		printf("\n#5\nline aft rd: %s #\n", line);//***********
+		printf("\n#6\nrd_rtrn: %d\n", read_return);//*************
 		if (read_return < 0)
 		{
 			free(line);
 			return (NULL);
 		}
 		line[read_return] = '\0';
+		printf("\n#7\nline aft '/0': %s #\n", line);//**********
 		bytes_read[fd] = ft_strjoin_free(bytes_read[fd], line, 1);
+		printf("\n#\nstatic aft join: %s #\n", bytes_read[fd]);//******
 	}
+	printf("\nline:%s ####\n", line);//**********
 	free(line);
+	printf("free line\n");//**********
+
 	if (!bytes_read[fd])
 		return (NULL);
+	printf("is this double free?\n");//********
 	line = return_current_line(bytes_read[fd]);
 	bytes_read[fd] = return_after_separator(bytes_read[fd]);
 	return (line);

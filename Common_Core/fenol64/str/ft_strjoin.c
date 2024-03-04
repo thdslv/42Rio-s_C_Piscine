@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
+/*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 17:11:08 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/29 23:22:20 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/10/22 22:25:10 by fnascime          #+#    #+#             */
+/*   Updated: 2023/12/04 20:02:49 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,15 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	size_t	len;
+	int		len;
 
-	printf("\n#10\ncame to join\n");//********
-	printf("\n#11\nstatic: %s # line: %s\n", s1, s2);//*******
 	if (!s1 || !s2)
 		return (NULL);
-	printf("\n#12\npast NULL check?\n");//*****
 	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc((len + 1) * sizeof(char));
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, s1, len + 1);
 	ft_strlcat(str, s2, len + 1);
 	return (str);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-	char	str1[] = "Quaretnta ";
-	char	str2[] = "e dois";
-
-	printf("%s", ft_strjoin(str1, str2));
-	return (0);
-}*/
