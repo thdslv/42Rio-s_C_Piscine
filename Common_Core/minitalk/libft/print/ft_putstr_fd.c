@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 17:10:12 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/05 17:16:14 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/10/17 05:05:33 by thda-sil          #+#    #+#             */
+/*   Updated: 2024/02/29 20:07:48 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "../includes/libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <signal.h>
-#include "libft/includes/libft.h"
+size_t	ft_putstr_fd(const char *s, int fd)
+{
+	size_t	i;
 
-#endif
+	i = -1;
+	if (!s)
+		return (0);
+	while (s[++i])
+		ft_putchar_fd(s[i], fd);
+	return (i);
+}
+
+/*#include <stdio.h>
+
+int	main(void)
+{
+	char	str[] = "Quarante-deux";
+
+	ft_putstr_fd(str, 1);
+	return (0);
+}*/

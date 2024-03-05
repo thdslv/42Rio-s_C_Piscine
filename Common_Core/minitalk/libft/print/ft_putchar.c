@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 17:10:12 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/05 17:16:14 by thda-sil         ###   ########.fr       */
+/*   Created: 2024/02/07 18:13:09 by thda-sil          #+#    #+#             */
+/*   Updated: 2024/02/07 18:40:44 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "../includes/libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <signal.h>
-#include "libft/includes/libft.h"
-
-#endif
+int	ft_putchar(const char c)
+{
+	return (write(1, &c, 1));
+}

@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "minitalk.h"
+
+void	mhandler(int signum)
+{
+	if (signum == SIGUSR1)
+		ft_printf("Message received!\n");
+}
+
 int	main(int argc, char **argv)
 {
 	int		pid;
@@ -17,9 +25,17 @@ int	main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		ft_printf("Uso: ./client [PID] [mensagem]\n");
+		ft_printf("Usage: ./client [PID] [menssage]\n");
 		return (1);
 	}
 	pid = ft_atoi(argv[1]);
 	message = argv[2];
+	if (PID < 0 || !message)
+	{
+		ft_printf("ERROR: invalid arguments\n");
+		return (1);
+	}
+	signal(SIGUSR1, &mhandler);
+	send_message(pid, str);
+	return (0);
 }

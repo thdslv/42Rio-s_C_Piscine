@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 17:10:12 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/05 17:16:14 by thda-sil         ###   ########.fr       */
+/*   Created: 2024/02/07 18:46:29 by thda-sil          #+#    #+#             */
+/*   Updated: 2024/02/29 19:56:34 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "../includes/libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <signal.h>
-#include "libft/includes/libft.h"
+int	ft_putendl(const char *str)
+{
+	int	i;
 
-#endif
+	i = 0;
+	i += ft_putstr(str);
+	i += ft_putstr("\n");
+	return (i);
+}

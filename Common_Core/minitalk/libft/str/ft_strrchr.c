@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 17:10:12 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/05 17:16:14 by thda-sil         ###   ########.fr       */
+/*   Created: 2023/10/20 17:11:54 by thda-sil          #+#    #+#             */
+/*   Updated: 2023/11/10 16:18:38 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "../includes/libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <signal.h>
-#include "libft/includes/libft.h"
+char	*ft_strrchr(const char *s, int c)
+{
+	size_t	i;
 
-#endif
+	i = ft_strlen(s) + 1;
+	while (i--)
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+	}
+	return (0);
+}
+
+/*#include <stdio.h>
+
+int	main(void)
+{
+	char	str[] = "Thalles";
+	int	x = 97;
+	printf("%s", ft_strrchr(str, x));
+	return(0);
+}*/
