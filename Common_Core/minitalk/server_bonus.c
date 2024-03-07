@@ -10,4 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "minitalk.h"
 
+int	main(void)
+{
+	int		pid;
+	struct sigaction	sa;
+
+
+	return (0);
+}
