@@ -5,12 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 15:04:54 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/05 15:04:58 by thda-sil         ###   ########.fr       */
+/*   Created: 2024/02/05 15:42:00 by thda-sil          #+#    #+#             */
+/*   Updated: 2024/03/07 19:49:15 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
+
+void	send_char(int pid, char c)
+{
+	int	i;
+	int	bit;
+
+	i = 0;
+	while (i < 8)
+	{
+		bit = (c >> i) & 1;
+		if (bit == 0)
+			kill(pid, SIGUSR1);
+		else if (bit == 1)
+			kill(pid, SIGUSR2);
+		usleep(600);
+		i++;
+	}
+}
+
+void	send_message(int pid, char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		send_char(pid, str[i]);
+		i++;
+	}
+	send_char(pid, '\0');
+}
 
 void	mhandler(int signum)
 {
@@ -21,18 +52,18 @@ void	mhandler(int signum)
 int	main(int argc, char **argv)
 {
 	int		pid;
-	char	*message;
+	char	*str;
 
 	if (argc != 3)
 	{
-		ft_printf("Usage: ./client [PID] [menssage]\n");
+		ft_printf("Usage: ./client [PID] [message]\n");
 		return (1);
 	}
 	pid = ft_atoi(argv[1]);
-	message = argv[2];
-	if (PID < 0 || !message)
+	str = argv[2];
+	if (pid < 0 || !str)
 	{
-		ft_printf("ERROR: invalid arguments\n");
+		ft_printf("ERROR: Invalid arguments");
 		return (1);
 	}
 	signal(SIGUSR1, &mhandler);

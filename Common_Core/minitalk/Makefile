@@ -14,29 +14,45 @@ NAME = minitalk.a
 
 SRC = server.c client.c
 
-OBJ = $(SRC: .c=.o)
+OBJ = $(SRC:.c=.o)
 
 BONUS_SRC = server_bonus.c client_bonus.c
 
-BONUS_OBJ = $(BONUS_SRC: .c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
 .c.o:
-	cc $(FLAGS) -I . -c $< -o $@	
-	cc $(FLAGS) -c $< -o $(<:.c=.0)
-
-$(NAME): 
+	cc $(FLAGS) -I . -c $< -o $@
 
 all: $(NAME)
 
-bonus: 
+libft/libft.a:
+	make -C libft
+
+server: server.o
+	cc $(FLAGS) -o server server.o libft/libft.a
+
+server_bonus: server_bonus.o
+	cc $(FLAGS) -o server_bonus server_bonus.o libft/libft.a
+
+client: client.o
+	cc $(FLAGS) -o client client.o libft/libft.a
+
+client_bonus: client_bonus.o
+	cc $(FLAGS) -o client_bonus client_bonus.o libft/libft.a
+
+$(NAME): $(OBJ) libft/libft.a server client
+
+bonus: $(BONUS_OBJ) libft/libft.a server_bonus client_bonus
 
 clean:
-	rm -f $(OBJ)
+		make -C libft clean
+		rm -rf $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+		make -C libft fclean
+		rm -rf $(NAME) $(OBJ) $(BONUS_OBJ) server client server_bonus client_bonus
 
 re: clean fclean
 
