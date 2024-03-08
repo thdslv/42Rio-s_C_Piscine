@@ -66,7 +66,7 @@ int	main(int argc, char **argv)
 		ft_printf("ERROR: Invalid arguments");
 		return (1);
 	}
-	signal(SIGUSR1, &mhandler);
+	signal(SIGUSR1, &message_handler);
 	send_message(pid, str);
 	return (0);
 }

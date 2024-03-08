@@ -15,7 +15,7 @@
 void	handler(int signum, siginfo_t *siginfo, void *context)
 {
 	static int	i = 0;
-	static int	c = 0;
+	static char	c = 0;
 
 	(void) context;
 	if (signum == SIGUSR1)

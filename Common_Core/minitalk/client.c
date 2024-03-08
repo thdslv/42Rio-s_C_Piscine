@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk_bonus.h"
+#include "minitalk.h"
 
 void	send_char(int pid, char c)
 {
@@ -43,7 +43,7 @@ void	send_message(int pid, char *str)
 	send_char(pid, '\0');
 }
 
-void	mhandler(int signum)
+void	message_handler(int signum)
 {
 	if (signum == SIGUSR1)
 		ft_printf("Message received!\n");
@@ -66,7 +66,7 @@ int	main(int argc, char **argv)
 		ft_printf("ERROR: Invalid arguments");
 		return (1);
 	}
-	signal(SIGUSR1, &mhandler);
+	signal(SIGUSR1, &message_handler);
 	send_message(pid, str);
 	return (0);
 }
