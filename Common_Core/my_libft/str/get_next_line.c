@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:56:35 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/03/12 18:49:36 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/03/13 18:01:07 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	find_current_line(const char *str)
 	return (0);
 }
 
-char	*return_current_line(char *bytes_read)
+static char	*return_current_line(const char *bytes_read)
 {
 	char	*line;
 	int		size;
@@ -53,7 +53,7 @@ char	*return_current_line(char *bytes_read)
 	return (line);
 }
 
-char	*return_after_separator(char *bytes_read)
+static char	*return_after_separator(char *bytes_read)
 {
 	char	*result;
 	int		size;
@@ -82,7 +82,7 @@ char	*return_after_separator(char *bytes_read)
 	return (result);
 }
 
-char	*read_file(int fd)
+static char	*read_file(int fd)
 {
 	static char	*bytes_read[MAX_FD] = {NULL};
 	char		*line;
@@ -101,7 +101,7 @@ char	*read_file(int fd)
 			return (NULL);
 		}
 		line[read_return] = '\0';
-		bytes_read[fd] = ft_strjoin_free(bytes_read[fd], line, 1);
+		bytes_read[fd] = ft_strjoin_gnl(bytes_read[fd], line);
 	}
 	free(line);
 	if (!bytes_read[fd])
@@ -118,20 +118,20 @@ char	*get_next_line(int fd)
 	return (read_file(fd));
 }
 
-#include <fcntl.h>
+/*#include <fcntl.h>
 
-int	main(int c, char **v)
+int     main(int c, char **v)
 {
-	int		fd;
-	//char	*line;
-	(void) c;
+    int             fd;
+    char  *line;
+    (void) c;
 
-	fd = open(v[1], O_RDONLY);
-	printf("%s", get_next_line(fd));
-	/*while ((line = get_next_line(fd)))
-	{
-		printf("%s", line);
-		free(line);
-	}*/
-	return (0);
-}
+    fd = open(v[1], O_RDONLY);
+    //printf("%s", get_next_line(fd));
+    while ((line = get_next_line(fd)))
+    {
+        printf("%s", line);
+        free(line);
+    }
+    return (0);
+}*/

@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_gnl.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 18:27:22 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/03/13 17:55:06 by thda-sil         ###   ########.fr       */
+/*   Created: 2024/03/13 16:50:45 by thda-sil          #+#    #+#             */
+/*   Updated: 2024/03/13 16:56:01 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
-	size_t	i;
-	char	*dup;
+	char	*str;
+	int		i;
 
-	dup = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (!dup)
+	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
 	i = 0;
-	while (s[i])
+	if (s1)
 	{
-		dup[i] = s[i];
-		i++;
+		while (s1[i])
+		{
+			str[i] = s1[i];
+			i++;
+		}
+		free(s1);
 	}
-	dup[i] = '\0';
-	return (dup);
+	while (*s2)
+		str[i++] = *s2++;
+	str[i] = '\0';
+	if (!*str)
+	{
+		free(str);
+		return (NULL);
+	}
+	return (str);
 }
-
-/*#include <stdio.h>
-#include <string.h>
-
-int	main()
-{
-	char	*s = "Hello";
-	printf("Original: %s\n", strdup(s));
-	printf("ft_: %s\n", ft_strdup(s));
-	return (0);
-}*/
