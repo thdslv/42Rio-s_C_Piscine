@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:56:35 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/03/04 18:18:47 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:49:36 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,20 +118,20 @@ char	*get_next_line(int fd)
 	return (read_file(fd));
 }
 
-/*#include <fcntl.h>
+#include <fcntl.h>
 
 int	main(int c, char **v)
 {
 	int		fd;
-	char	*line;
+	//char	*line;
 	(void) c;
 
 	fd = open(v[1], O_RDONLY);
-	//printf("%s", get_next_line(fd));
-	while ((line = get_next_line(fd)))
+	printf("%s", get_next_line(fd));
+	/*while ((line = get_next_line(fd)))
 	{
 		printf("%s", line);
 		free(line);
-	}
+	}*/
 	return (0);
-}*/
+}

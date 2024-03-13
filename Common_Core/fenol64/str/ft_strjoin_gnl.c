@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin_gnl.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fnascime <fnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 22:25:10 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 20:02:49 by fnascime         ###   ########.fr       */
+/*   Created: 2024/03/12 20:44:57 by fnascime          #+#    #+#             */
+/*   Updated: 2024/03/12 20:58:16 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*str;
-	int		len;
+	int		i;
 
-	if (!s1 || !s2)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s1, len + 1);
-	ft_strlcat(str, s2, len + 1);
+	i = 0;
+	if (s1)
+	{
+		while (s1[i])
+		{
+			str[i] = s1[i];
+			i++;
+		}
+		free(s1);
+	}
+	while (*s2)
+		str[i++] = *s2++;
+	str[i] = '\0';
+	if (!*str)
+	{
+		free(str);
+		return (NULL);
+	}
 	return (str);
 }

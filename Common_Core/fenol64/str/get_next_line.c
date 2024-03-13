@@ -6,7 +6,7 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 18:43:58 by fnascime          #+#    #+#             */
-/*   Updated: 2024/03/04 16:50:59 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/03/12 20:55:56 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ static char	*read_file(int fd)
 			return (NULL);
 		}
 		line[read_return] = '\0';
-		res[fd] = ft_strjoin_free(res[fd], line, 1);
+		res[fd] = ft_strjoin_gnl(res[fd], line);
 	}
 	free(line);
 	if (!res[fd])
@@ -118,19 +118,20 @@ char	*get_next_line(int fd)
 	return (read_file(fd));
 }
 
-#include <fcntl.h>
+/*#include <fcntl.h>
 #include <stdio.h>
 int     main(int c, char **v)
 {
-	(void) c;
-	char    *line;
-	int     fd = open(v[1], O_RDONLY);
+        int             fd;
+        char  *line;
+        (void) c;
 
-	//printf("%s", get_next_line(fd));
-	while ((line = get_next_line(fd)))
-	{
-		printf("%s", line);
-		free(line);
-	}
+        fd = open(v[1], O_RDONLY);
+        //printf("%s", get_next_line(fd));
+        while ((line = get_next_line(fd)))
+        {
+                printf("%s", line);
+                free(line);
+        }
         return (0);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: thda-sil <thda-sil@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:44:57 by thda-sil          #+#    #+#             */
-/*   Updated: 2024/02/29 23:26:43 by thda-sil         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:49:02 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+
+# include <stdio.h>
 
 # ifndef MIN_INT
 #  define MIN_INT -2147483648

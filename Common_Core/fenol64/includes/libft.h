@@ -6,7 +6,7 @@
 /*   By: fenol64 <fenol64@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:46:57 by fnascime          #+#    #+#             */
-/*   Updated: 2024/01/08 00:38:04 by fenol64          ###   ########.fr       */
+/*   Updated: 2024/03/12 20:58:50 by thda-sil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ char		**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
+char		*ft_strjoin_gnl(char *s1, char *s2);
 char		*get_next_line(int fd);
 
 // bonus functions
