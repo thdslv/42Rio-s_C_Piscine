@@ -15,6 +15,8 @@
 int key_hook(int keycode, t_game *game)
 {
     if ( keycode == ESC)
+        close_hook(game);
+    else if (keycode == W || keycode == UP)
         
     return (0);
 }
