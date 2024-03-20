@@ -31,6 +31,8 @@ SRC = is/ft_isalnum.c \
 	list/ft_lstmap.c \
 	list/ft_lstnew.c \
 	list/ft_lstsize.c \
+	matrix/ft_free_matrix.c \
+	matrix/ft_matrix_len.c \
 	mem/ft_bzero.c \
 	mem/ft_calloc.c \
 	mem/ft_memchr.c \
