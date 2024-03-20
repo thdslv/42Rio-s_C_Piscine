@@ -16,7 +16,7 @@ void	free_images(t_game *game)
 {
 	mlx_destroy_image(game->connection, game->floor_image);
 	mlx_destroy_image(game->connection, game->wall_image);
-	mlx_destroy_image(game->connection, game->collectible.image);
+	mlx_destroy_image(game->connection, game->collectable.image);
 	mlx_destroy_image(game->connection, game->player.up_view);
 	mlx_destroy_image(game->connection, game->player.down_view);
 	mlx_destroy_image(game->connection, game->player.left_view);

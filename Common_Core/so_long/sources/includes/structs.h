@@ -42,7 +42,7 @@ typedef struct s_game
     int     map_height;
     int     wall_error;
     t_player    player;
-    t_block collectible;
+    t_block collectable;
     t_block exit;
     int exit_possible;
     t_block villain;

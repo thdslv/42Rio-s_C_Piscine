@@ -29,7 +29,14 @@ enum e_key_codes {
 };
 
 enum e_error_codes {
-
+    BER_ERROR = -1,
+    MAP_DIMENSION_ERROR = -2,
+    PLAYER_ERROR = -3,
+    EXIT_ERROR = -4,
+    COLLECTABLE_ERROR = -5,
+    MAP_ERROR = -6,
+    MAP_WALL_ERROR = -7,
+    MAP_CHAR_ERROR = -8
 };
 
 #endif

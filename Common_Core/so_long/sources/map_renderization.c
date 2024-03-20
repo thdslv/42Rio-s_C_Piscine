@@ -38,14 +38,14 @@ void    render_player(t_game *game)
 
 void    render_exit(t_game *game, int x, int y)
 {
-    if (game->collectible.amount == 0 && game->exit_possible == 0)
+    if (game->collectable.amount == 0 && game->exit_possible == 0)
     {
         put_image(game, game->exit.frame, x, y);//FRAMES
         ft_sleep(2);
         //repeat for frames
         game->exit_possible = 1;
     }
-    else if (game->collectible.amount == 0 && game->exit_possible == 1)
+    else if (game->collectable.amount == 0 && game->exit_possible == 1)
         put_image(game, game->exit.frame, x , y);//last frame
     else
         put_image(game, game->exit.image, x, y);
@@ -65,7 +65,7 @@ void    render_map(t_game *game)
             if (game->map[y][x] == '1')
                 put_image(game, game->wall_image, x, y);
             else if (game->map[y][x] == 'C')
-                put_image(game, game->collectible.image, x, y);
+                put_image(game, game->collectable.image, x, y);
             else if (game->map[y][x] == 'P')
                 render_player(game);
             else if (game->map[y][x] == 'E')

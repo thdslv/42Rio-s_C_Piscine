@@ -23,7 +23,8 @@ void    load_image(t_game *game, void **image, char *path)
 
 void put_image(t_game *game, void *image, int x, int y)
 {
-    mlx_put_image_to_window(game->connection, game->window, image, x * BLOCK_SIZE, y * BLOCK_SIZE);
+    mlx_put_image_to_window(game->connection, game->window, image,
+            x * BLOCK_SIZE, y * BLOCK_SIZE);
     mlx_do_sync(game->connection);
 }
 

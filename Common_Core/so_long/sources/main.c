@@ -17,7 +17,6 @@ int main(int argc, char **argv)
     t_game  game;
 
     game = (t_game){0};
-
     if (argc != 2)
         ft_printf("Usage: ./so_long map_path.ber\n");
     else
@@ -29,8 +28,7 @@ int main(int argc, char **argv)
         game.window= mlx_new_window(game.connection, game.map_width, game.map_height, "so_long");
         render_map(&game);
 		mlx_key_hook(game.window, key_hook, &game);
-		//mlx_hook(game.window, 17, 0, close_hook, &game);
+		mlx_hook(game.window, 17, 0, close_hook, &game);
 		mlx_loop(game.connection);
     }
-    return (0);
 }

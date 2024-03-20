@@ -18,14 +18,14 @@ void    move_up(t_game *game)
     if (game->map[game->player.y - 1][game->player.x] != '1')
     {
         if (game->map[game->player.y - 1][game->player.x] == 'E'
-                && game->collectible.amount != 0)
+                && game->collectable.amount != 0)
                 return ;
         game->map[game->player.y][game->player.x] = '0';
         game->player.y -= 1;
         if (game->map[game->player.y][game->player.x]  == 'C')
-                game->collectible.amount--;
+                game->collectable.amount--;
         else if ((game->map[game->player.y][game->player.x] == 'E'
-                && game->collectible.amount == 0) ||
+                && game->collectable.amount == 0) ||
                 game->map[game->player.y][game->player.x] == 'V')
                 close_hook(game);
         game->map[game->player.y][game->player.x] = 'P';
@@ -41,14 +41,14 @@ void    move_down(t_game *game)
     if (game->map[game->player.y + 1][game->player.x] != '1')
     {
         if (game->map[game->player.y + 1][game->player.x] == 'E'
-                && game->collectible.amount != 0)
+                && game->collectable.amount != 0)
                 return ;
         game->map[game->player.y][game->player.x] = '0';
         game->player.y += 1;
         if (game->map[game->player.y][game->player.x] == 'C')
-                game->collectible.amount--;
+                game->collectable.amount--;
         else if ((game->map[game->player.y][game->player.x] == 'E'
-                && game->collectible.amount == 0) ||
+                && game->collectable.amount == 0) ||
                 game->map[game->player.y][game->player.x] == 'V')
                 close_hook(game);
         game->map[game->player.y][game->player.x] = 'P';
@@ -64,14 +64,14 @@ void    move_left(t_game *game)
     if (game->map[game->player.y][game->player.x - 1] != '1')
     {
         if (game->map[game->player.y][game->player.x - 1] == 'E'
-                && game->collectible.amount != 0)
+                && game->collectable.amount != 0)
                 return ;
         game->map[game->player.y][game->player.x] = '0';
         game->player.x -= 1;
         if (game->map[game->player.y][game->player.x] == 'C')
-            game->collectible.amount--;
+            game->collectable.amount--;
         else if ((game->map[game->player.y][game->player.x] == 'E'
-                && game->collectible.amount == 0) ||
+                && game->collectable.amount == 0) ||
                 game->map[game->player.y][game->player.x] == 'V')
                 close_hook(game);
         game->map[game->player.y][game->player.x] = 'P';
@@ -87,14 +87,14 @@ void    move_right(t_game *game)
     if (game->map[game->player.y][game->player.x + 1] != 1)
     {
         if (game->map[game->player.y][game->player.x + 1]  == 'E'
-                && game->collectible.amount != 0)
+                && game->collectable.amount != 0)
                 return ;
         game->map[game->player.y][game->player.x] = '0';
         game->player.x += 1;
         if (game->map[game->player.y][game->player.x] == 'C')
-            game->collectible.amount--;
+            game->collectable.amount--;
         else if ((game->map[game->player.y][game->player.x] == 'E'
-                && game->collectible.amount == '0') ||
+                && game->collectable.amount == '0') ||
                 game->map[game->player.y][game->player.x] == 'V')
                 close_hook(game);
         game->map[game->player.y][game->player.x] = 'P';
