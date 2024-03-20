@@ -12,6 +12,31 @@
 
 #include "includes/so_long.h"
 
+static int  check_map_char(char c)
+{
+    if (c == '0' || c == '1' || c == 'E' || c == 'P')
+        return (1);
+    else if (BONUS_ENABLED && c == 'V')
+        return (1);
+    return (0);
+}
+
+static int  check_map_chars(char *map_str)
+{
+    int i;
+
+    i = -1;
+    while (map_str[++i])
+    {
+        if (!check_map_char(map_str[i]) && map_str[i] != '\n')
+        {
+            map_error(MAP_CHAR_ERROR);
+            return (MAP_CHAR_ERROR);
+        }
+    }
+    return (1);
+}
+
 static void get_map_dimensions(char **map_str, t_game *game)
 {
     int     i;
@@ -75,5 +100,13 @@ int check_map(char *map_path, t_game *game)
     }
     game->map = ft_split(map_str, '\n');
     get_map_dimensions(game->map, game);
-    err_code = 
+    err_code = validate_map(map_str, game);
+    if ((check_map_chars(map_str) < 0) || (err_code < 0))
+    {
+        free_game(game, 0);
+        free(map_str);
+        return (0);
+    }
+    free(map_str);
+    return (1);
 }

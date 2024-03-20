@@ -14,6 +14,8 @@ NAME = so_long
 
 SRC = 
 
+BONUS_ENABLED = 0
+
 OBJ = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
