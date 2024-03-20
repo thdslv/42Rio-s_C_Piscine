@@ -17,8 +17,6 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-# include <stdio.h>
-
 # ifndef MIN_INT
 #  define MIN_INT -2147483648
 # endif
