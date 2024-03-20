@@ -46,7 +46,7 @@ void	move_up(t_game *game);
 void	move_down(t_game *game);
 void	move_left(t_game *game);
 void	move_right(t_game *game);
-void	atack_enemy(t_game *game);
+void	attack_enemy(t_game *game);
 
 // MAP VALIDATIONS
 int		validade_extension(char *map_path);

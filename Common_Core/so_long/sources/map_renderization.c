@@ -38,15 +38,15 @@ void    render_player(t_game *game)
 
 void    render_exit(t_game *game, int x, int y)
 {
-    if (game->collectible.amount == 0 && game->exit_possible == 0;)
+    if (game->collectible.amount == 0 && game->exit_possible == 0)
     {
-        put_image(game, game->exit, x, y);//FRAMES
+        put_image(game, game->exit.frame, x, y);//FRAMES
         ft_sleep(2);
         //repeat for frames
         game->exit_possible = 1;
     }
     else if (game->collectible.amount == 0 && game->exit_possible == 1)
-        put_image(game, game->exit, x , y)//last frame
+        put_image(game, game->exit.frame, x , y);//last frame
     else
         put_image(game, game->exit.image, x, y);
 }

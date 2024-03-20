@@ -18,12 +18,12 @@ void    move_up(t_game *game)
     if (game->map[game->player.y - 1][game->player.x] != '1')
     {
         if (game->map[game->player.y - 1][game->player.x] == 'E'
-                && game-> collectible.amount != 0)
+                && game->collectible.amount != 0)
                 return ;
         game->map[game->player.y][game->player.x] = '0';
         game->player.y -= 1;
         if (game->map[game->player.y][game->player.x]  == 'C')
-            game->collectible.amount--;
+                game->collectible.amount--;
         else if ((game->map[game->player.y][game->player.x] == 'E'
                 && game->collectible.amount == 0) ||
                 game->map[game->player.y][game->player.x] == 'V')
@@ -33,4 +33,86 @@ void    move_up(t_game *game)
         ft_printf("Move count: %d\r", game->move_count);
         render_map(game);        
     }
+}
+
+void    move_down(t_game *game)
+{
+    game->player.direction = 'D';
+    if (game->map[game->player.y + 1][game->player.x] != '1')
+    {
+        if (game->map[game->player.y + 1][game->player.x] == 'E'
+                && game->collectible.amount != 0)
+                return ;
+        game->map[game->player.y][game->player.x] = '0';
+        game->player.y += 1;
+        if (game->map[game->player.y][game->player.x] == 'C')
+                game->collectible.amount--;
+        else if ((game->map[game->player.y][game->player.x] == 'E'
+                && game->collectible.amount == 0) ||
+                game->map[game->player.y][game->player.x] == 'V')
+                close_hook(game);
+        game->map[game->player.y][game->player.x] = 'P';
+        game->move_count++;
+        ft_printf("Move count: %d\r", game->move_count);
+        render_map(game);        
+    }
+}
+
+void    move_left(t_game *game)
+{
+    game->player.direction = 'L';
+    if (game->map[game->player.y][game->player.x - 1] != '1')
+    {
+        if (game->map[game->player.y][game->player.x - 1] == 'E'
+                && game->collectible.amount != 0)
+                return ;
+        game->map[game->player.y][game->player.x] = '0';
+        game->player.x -= 1;
+        if (game->map[game->player.y][game->player.x] == 'C')
+            game->collectible.amount--;
+        else if ((game->map[game->player.y][game->player.x] == 'E'
+                && game->collectible.amount == 0) ||
+                game->map[game->player.y][game->player.x] == 'V')
+                close_hook(game);
+        game->map[game->player.y][game->player.x] = 'P';
+        game->move_count++;
+        ft_printf("Move count: %d\r", game->move_count);
+        render_map(game);
+    }
+}
+
+void    move_right(t_game *game)
+{
+    game->player.direction = 'R';
+    if (game->map[game->player.y][game->player.x + 1] != 1)
+    {
+        if (game->map[game->player.y][game->player.x + 1]  == 'E'
+                && game->collectible.amount != 0)
+                return ;
+        game->map[game->player.y][game->player.x] = '0';
+        game->player.x += 1;
+        if (game->map[game->player.y][game->player.x] == 'C')
+            game->collectible.amount--;
+        else if ((game->map[game->player.y][game->player.x] == 'E'
+                && game->collectible.amount == '0') ||
+                game->map[game->player.y][game->player.x] == 'V')
+                close_hook(game);
+        game->map[game->player.y][game->player.x] = 'P';
+        game->move_count++;
+        ft_printf("Move count: %d\r", game->move_count);
+        render_map(game);
+    }
+}
+
+void    attack_enemy(t_game *game)
+{
+    if (game->map[game->player.y - 1][game->player.x] == 'V')
+        game->map[game->player.y - 1][game->player.x] = '0';
+    else if (game->map[game->player.y + 1][game->player.x] == 'V')
+        game->map[game->player.y + 1][game->player.x] = '0';
+    else if (game->map[game->player.y][game->player.x - 1] == 'V')
+        game->map[game->player.y][game->player.x - 1] = '0';
+    else if (game->map[game->player.y][game->player.x + 1] == 'V')
+        game->map[game->player.y][game->player.x + 1] = '0';
+    render_map(game);
 }

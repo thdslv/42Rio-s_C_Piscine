@@ -17,6 +17,16 @@ int key_hook(int keycode, t_game *game)
     if ( keycode == ESC)
         close_hook(game);
     else if (keycode == W || keycode == UP)
-        
+        move_up(game);
+    else if (keycode == A || keycode == LEFT)
+        move_left(game);
+    else if (keycode == S || keycode == DOWN)
+        move_down(game);
+    else if (keycode == D || keycode == RIGHT)
+        move_right(game);
+    else if (keycode == SPACE)
+        attack_enemy(game);
+    else
+        ft_printf("Invalid key\n");
     return (0);
 }
