@@ -14,27 +14,29 @@ NAME = so_long
 
 SRC = 
 
-BONUS_ENABLED = 0
-
 OBJ = $(SRC:.c=.o)
+
+COMPILER = cc
 
 FLAGS = -Wall -Wextra -Werror
 
+BONUS_ENABLED = 0
+
 .c.o:
-	cc $(FLAGS) -c $< -o $@
+	$(COMPILER) -D BONUS_ENABLED=$(BONUS_ENABLED) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME):	$(OBJS)
 	make -C libraries/libft
-	make -C libraries/mlx
-	cc $(FLAGS) $(OBJS) libs/libft/libft.a -o $(NAME) -Llibraries/mlx -lmlx -lX11 -lXext
+	make -C libraries/minilibx-linux
+	$(COMPILER) $(FLAGS) $(OBJS) libs/libft/libft.a -o $(NAME) -Llibraries/minilibx-linux -lmlx -lX11 -lXext
 	@ echo "compile complete\n"
 
 clean:
 	rm -f $(OBJS)
 	make clean -C libs/libft
-	make clean -C libs/mlx
+	make clean -C libs/minilibx-linux
 
 fclean:	clean
 	rm -f $(NAME)

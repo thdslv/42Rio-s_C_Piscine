@@ -12,7 +12,7 @@
 
 #include "includes/so_long.h"
 
-int validate_extention(char *map_path)
+int validate_extension(char *map_path)
 {
     if (ft_strnstr(map_path + ft_strlen(map_path) - 4, ".ber", 4))
         return (1);
@@ -55,7 +55,7 @@ static void validate_player_path(t_game *game, char **map, int x, int y)
     if (map[y][x - 1] != '1')
         validate_player_path(game, map, x - 1, y);
     if (map[y + 1][x] != '1')
-        validate_player_path(game, map, x, y +1);
+        validate_player_path(game, map, x, y + 1);
     if (map[y - 1][x] != '1')
         validate_player_path(game, map, x, y - 1);
 }
