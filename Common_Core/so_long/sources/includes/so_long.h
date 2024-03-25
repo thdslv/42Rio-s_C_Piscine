@@ -35,15 +35,14 @@ void	ft_sleep(unsigned int seconds);
 void	map_error(int error_code);
 int		error(void);
 
+// IMAGE HANDLER
+int		load_images(t_game *game);
+void	put_image(t_game *game, void *image, int x, int y);
+
 // HOOKS
 void	free_game(t_game *game, int freelib);
 int		close_hook(t_game *game);
 int		key_hook(int keycode, t_game *game);
-
-// IMAGE HANDLER
-void	load_image(t_game *game, void **image, char *path);
-int		load_images(t_game *game);
-void	put_image(t_game *game, void *image, int x, int y);
 
 // PLAYER MOVEMENT
 void	move_up(t_game *game);

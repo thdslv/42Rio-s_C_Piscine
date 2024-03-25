@@ -33,6 +33,9 @@ $(NAME):	$(OBJS)
 	$(COMPILER) $(FLAGS) $(OBJS) libs/libft/libft.a -o $(NAME) -Llibraries/minilibx-linux -lmlx -lX11 -lXext
 	@ echo "compile complete\n"
 
+bonus: override BONUS_ENABLED = 1
+bonus : $()
+
 clean:
 	rm -f $(OBJS)
 	make clean -C libs/libft
